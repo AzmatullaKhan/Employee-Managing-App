@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your EMS Landing Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden; 
+        }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgb(98, 106, 213), rgb(147, 23, 198));
+    color: white; 
+}
+
+        
+        .navbar-brand {
+            margin-left: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .navbar-nav {
+            display: flex;
+            list-style-type: none;
+            margin-right: 20px;
+        }
+        
+        .nav-item {
+            margin-right: 15px;
+        }
+        
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            font-size: 24px;
+            margin-right: 20px;
+            color: #fff;
+        }
+        
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: transform 0.4s ease-in-out;
+        }
+        .main-section {
+            position: relative;
+            height: 400px; 
+            overflow: hidden;
+        }
+        
+        .main-section img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+		.main-section-content {
+		    position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%, -50%);
+		    text-align: center;
+		    color: #fff;
+		    z-index: 1;
+			background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)); /* Linear gradient from more opaque to less opaque white */
+		    padding: 20px;
+		    border-radius: 10px;
+		}
+        
+        .main-section h2 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+			color: rgb(147, 23, 198);
+        }
+        
+        .main-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 600px;
+			font-weight: bold;
+            margin: 0 auto;
+			color: rgb(147, 23, 198);
+        }
+        .cards-section {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background:linear-gradient(135deg, rgb(98, 106, 213), rgb(147, 23, 198));
+            flex-wrap: wrap;
+            padding: 50px 0;
+        }
+        
+        .card {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: rgb(147, 23, 198);
+        }
+        
+        .card p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: grey;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+        
+        footer p {
+            margin: 5px;
+        }
+        
+        footer .social-icons {
+            margin-top: 10px;
+        }
+        
+        footer .social-icons a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .animated-text {
+            animation: fade-in 1s ease-in-out forwards;
+        }
+        @media only screen and (max-width: 768px) {
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                background-color: rgb(98, 106, 213);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+                z-index: 1;
+            }
+            
+            .navbar-nav.active {
+                display: flex;
+            }
+            
+            .nav-item {
+                margin: 10px 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-h/K6kMI7l1wEv3aeZ9fcT4Cg3TkL1JKu/R2doT/XQ0XGI6xVmVrU6sNRRtVBlB73US5R3/wL1ECWT1n8d9Vl3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="your-logo.png" alt="Your EMS Logo" style="max-height: 50px;">
+        </div>
+        <div class="hamburger" onclick="toggleNavbar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="navbar-nav" id="navbarNav">
+            <li class="nav-item"><a href="#about-us" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="opening.html" class="nav-link">Login/Sign up</a></li>
+            <li class="nav-item"><a href="#help" class="nav-link">Help</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Section -->
+    <section id="main" class="main-section">
+        <img src="./images/landingpage.jpg" alt="Your EMS Image">
+        <div class="main-section-content">
+            <h2 class="animated-text">Welcome to Your EMS</h2>
+            <p class="animated-text">Your XXXXX Software Company provides innovative solutions tailored to streamline management processes, enhance efficiency, and drive growth. We specialize in delivering robust software applications that empower businesses of all sizes.</p>
+        </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section id="features" class="cards-section">
+        <div class="card">
+            <h3>Feature 1</h3>
+            <p>Description of feature 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+        <div class="card">
+            <h3>Feature 2</h3>
+            <p>Description of feature 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+        <div class="card">
+            <h3>Feature 3</h3>
+            <p>Description of feature 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+        <div class="card">
+            <h3>Feature 4</h3>
+            <p>Description of feature 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#" class="fab fa-facebook" style="color: rgb(147, 23, 198);">a</a>
+            <a href="#" class="fab fa-twitter" style="color: rgb(98, 106, 213);">b</a>
+            <a href="#" class="fab fa-github" style="color: rgb(44, 206, 149);">c</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNavbar() {
+            var navbar = document.getElementById('navbarNav');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
