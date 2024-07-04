@@ -61,11 +61,32 @@
         0%{position: relative;left: -800px;}
         100%{position: relative;left: 0px;}
     }
+    .opening_container_one_anchor_singup{
+        position: absolute;
+        top: 30px;
+        margin:0px 0px 0px 1000px;
+        background-color: #9317c6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width:280px;
+        border-radius: 12px;
+        cursor: pointer;
+        color: #fff;
+        text-decoration: none;
+        animation: opening_container_one_anchor_singup-animation 1.2s ease-in-out 0s;
+    }
+    @keyframes opening_container_one_anchor_singup-animation {
+        0%{opacity: 0;}
+        100%{opacity: 1;}
+    }
 </style> 
 <body>
     <div class="opening_container_one">
         <a class="opening_container_one_anchor" href="managerLogin.html">Manager</a>
         <a class="opening_container_one_anchor" href="employeeLogin.html">Employee</a>
+        <a class="opening_container_one_anchor_singup" href="managerSignup.html">Dont have an account? SignUp here</a>
     </div>
 </body>
 </html>
