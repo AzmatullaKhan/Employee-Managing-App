@@ -10,7 +10,7 @@
         box-sizing: border-box;
         font-family: monospace;
         scroll-behavior: smooth;
-        overflow: hidden;
+        overflow-x: hidden;
         }
     *::-webkit-scrollbar{
         display: none;
@@ -28,6 +28,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         animation: landingpage_container_one-animation 1.5s ease-in-out 0s;
     }
     @keyframes landingpage_container_one-animation {
@@ -53,6 +54,7 @@
         justify-content: space-between;
         align-items: center;
         animation: landing_container_nav_one-animation 1s ease-in-out 0s;
+        backdrop-filter: blur(12px);
 
     }
     @keyframes landing_container_nav_one-animation {
@@ -117,21 +119,18 @@
         font-style: italic;
     }
 
-    /* .landingpage_container_two{
-        height: 700px;
-        width: 400px;
+    .landingpage_container_two{
+        height: auto;
+        width: 1492px;
         padding: 20px;
-        position: absolute;
-        top:100px;
-        margin-left: 1080px;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
     .landingpage_container_two_feature_right{
-        height:150px;
-        width: 360px;
+        height:300px;
+        width: 900px;
         border-radius: 20px;
         display: flex;
         justify-content: center;
@@ -140,16 +139,18 @@
     }
     .landingpage_container_two_feature_right_desc{
         text-align: center;
+        font-size: 18px;
+        font-style: oblique;
     }
     .landingpage_container_two_feature_right_image{
-        height:100px;
-        width: 250px;
+        height:250px;
+        width: 300px;
         border-radius: 50%;
         pointer-events: none;
     }
     .landingpage_container_two_feature_left{
-        height:150px;
-        width: 360px;
+        height:300px;
+        width: 900px;
         border-radius: 20px;
         display: flex;
         justify-content: center;
@@ -158,45 +159,138 @@
     }
     .landingpage_container_two_feature_left_desc{
         text-align: center;
+        font-size: 18px;
+        font-style: oblique;
+
     }
     .landingpage_container_two_feature_left_image{
-        height:100px;
-        width: 250px;
+        height:250px;
+        width: 300px;
         border-radius: 50%;
         pointer-events: none;
-    } */
+    }
+    .landingpage_container_three{
+        height: 850px;
+        width: 1492px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-image: url('./images/landingpageContact.png');
+        background-size: cover;
+    }
+    .landingpage_container_three_div{
+        height:600px;
+        width:400px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        position: absolute;
+        margin-left: 800px;
+    }
+    .landingpage_container_three_div_label{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: bolder;
+        margin: 10px 0px 10px 0px;
+        text-align: center;
+        color: #009d9c;
+    }
+    .landingpage_container_three_div_input{
+        height:30px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid;
+        outline: none;
+        background-color: transparent;
+        text-align: center;
+    }
+    
+    .landingpage_container_three_div_button{
+        height:50px;
+        width:130px;
+        align-self: center;
+        margin: 20px 0px;
+        background-color: transparent;
+        border-radius: 12px;
+        border:2px solid #009d9c;
+        cursor: pointer;
+        transition: all 0.4s ease;
+
+    }
+    .landingpage_container_three_div_button:hover{
+        background-color: #febe69;
+        border:none;
+        width: 140px;
+        font-size: 16px;
+    }
+    .top_img{
+        height: 60px;
+        width: 60px; 
+        position: fixed;
+        top: 760px;
+        margin-left: 1400px;
+        border-radius: 50%;
+        z-index: 3;
+        cursor: pointer;
+    }
 </style>
 <body>
-    <div class="landingpage_container_one">
-        <img src="./images/landingpagemain.png" alt="image" class="landingpage_container_one_image">
-        <div class="landing_container_nav_one">
-            <div class="landing_container_nav_one_div">
-                <a href="opening.html" class="landing_container_nav_one_anchor">SignIn/SignUp</a>
-                <a class="landing_container_nav_one_anchor">Contact</a>
-                <a class="landing_container_nav_one_anchor">Features</a>
+    <div>
+        <section id="home">
+            <div class="landingpage_container_one">
+                <img src="./images/landingpagemain.png" alt="image" class="landingpage_container_one_image">
+                <div class="landing_container_nav_one">
+                    <div class="landing_container_nav_one_div">
+                        <a href="opening.html" class="landing_container_nav_one_anchor">SignIn/SignUp</a>
+                        <a class="landing_container_nav_one_anchor" href="#contact">Contact</a>
+                        <a class="landing_container_nav_one_anchor" href="#features">Features</a>
+                    </div>
+                    <img src="./images/manager.jpg" alt="logo" class="landing_container_nav_one_image">
+                </div>
+                <h1 class="landingpage_container_one_head1" style="animation: landingpage_container_one_desc1-animation 1s ease-in-out 0;">Welcome to Employee Management Service</h1>
+                <p class="landingpage_container_one_desc1">-provides innovative solutions tailored to streamline management processes, enhance efficiency, and drive growth. We specialize in delivering robust software applications that empower businesses of all sizes.</p>
             </div>
-            <img src="./images/manager.jpg" alt="logo" class="landing_container_nav_one_image">
-        </div>
-        <h1 class="landingpage_container_one_head1" style="animation: landingpage_container_one_desc1-animation 1s ease-in-out 0;">Welcome to Employee Management Service</h1>
-        <p class="landingpage_container_one_desc1">-provides innovative solutions tailored to streamline management processes, enhance efficiency, and drive growth. We specialize in delivering robust software applications that empower businesses of all sizes.</p>
+        </section>
+        <section id="features">
+            <div class="landingpage_container_two">
+                <div class="landingpage_container_two_feature_right">
+                    <img src="./images/landingpage1.png" alt="image" class="landingpage_container_two_feature_right_image">
+                    <p class="landingpage_container_two_feature_right_desc">Communication through our Employee Management app is effortlessly streamlined.</p>
+                </div>
+                <div class="landingpage_container_two_feature_left">
+                    <p class="landingpage_container_two_feature_left_desc">Adding the users and making them into groups for better woring can be done.</p>
+                    <img src="./images/landingpage2.png" alt="image" class="landingpage_container_two_feature_left_image">
+                </div>
+                <div class="landingpage_container_two_feature_right">
+                    <img src="./images/landingpage3.png" alt="image" class="landingpage_container_two_feature_right_image">
+                    <p class="landingpage_container_two_feature_right_desc">Tasks assignment to the users created can be also acheived effortlessly.</p>
+                </div>
+                <div class="landingpage_container_two_feature_left">
+                    <p class="landingpage_container_two_feature_left_desc">Reminders for specific tasks in order to complete or to know deadline can be set.</p>
+                    <img src="./images/landingpage4.png" alt="image" class="landingpage_container_two_feature_left_image">
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="landingpage_container_three">
+                <div class="landingpage_container_three_div">
+                    <label for="" class="landingpage_container_three_div_label">Email</label>
+                    <input type="email" name="contact_email_id" class="landingpage_container_three_div_input" placeholder="*** Email ***"><br><br>
+                   
+                    <label for="" class="landingpage_container_three_div_label">Subject</label>
+                    <input type="text" name="contact_email_subject" class="landingpage_container_three_div_input" placeholder="*** Subject ***"><br><br>
+                   
+                    <label for="" class="landingpage_container_three_div_label">Context</label>
+                    <textarea style="height: 100px;text-align: start;" type="text" name="contact_email_context" class="landingpage_container_three_div_input" placeholder="*** Context ***" ></textarea><br>
+
+                    <button class="landingpage_container_three_div_button">Submit</button>
+                </div>
+            </div>
+        </section>
+        <a href="#home" class="top_img"><img src="./images/goTop.png" style="height: 50px;width: 50px;" alt="top" /></a>
     </div>
-     <!-- <div class="landingpage_container_two">
-        <div class="landingpage_container_two_feature_right">
-            <img src="./images/landingpage1.png" alt="image" class="landingpage_container_two_feature_right_image">
-            <p class="landingpage_container_two_feature_right_desc">Communication through our Employee Management app is effortlessly streamlined.</p>
-        </div>
-        <div class="landingpage_container_two_feature_left">
-            <p class="landingpage_container_two_feature_left_desc">Adding the users and making them into groups for better woring can be done.</p>
-            <img src="./images/landingpage2.png" alt="image" class="landingpage_container_two_feature_left_image">
-        </div>
-        <div class="landingpage_container_two_feature_right">
-            <img src="./images/landingpage3.png" alt="image" class="landingpage_container_two_feature_right_image">
-            <p class="landingpage_container_two_feature_right_desc">Tasks assignments to the users created can be also done effortlessly.</p>
-        </div>
-        <div class="landingpage_container_two_feature_left">
-            <p class="landingpage_container_two_feature_left_desc">Reminders for specific tasks in order to complete or to know deadline can be set.</p>
-            <img src="./images/landingpage4.png" alt="image" class="landingpage_container_two_feature_left_image">
-        </div>
-    </div> -->
 </body>
 </html>
