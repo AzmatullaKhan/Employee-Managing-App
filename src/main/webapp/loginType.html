@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        font-family: monospace;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+    *::-webkit-scrollbar{
+        display: none;
+    }
+    body{
+        margin:0px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .opening_container_one{
+        height: 850px;
+        width:1492px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .opening_container_one_anchor{
+        position: fixed;
+        top: 10px;
+        height:40px;
+        width:120px;
+        align-self: center;
+        background-color: transparent;
+        border-radius: 20px;
+        border:2px solid #5f497f;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        position: fixed;
+        margin-left:  1200px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+    .opening_container_one_anchor:hover{
+        background-color: #5f497f;
+        width: 125px;
+        font-size: 14px;
+        color: #fff;
+    }
+
+
+    .opening_container_zero_left{
+      height: 700px;
+      min-width:400px;
+      max-width:400px;
+      border: 1px solid;
+      border-radius: 12px;
+      filter:drop-shadow(2px 2px 4px #000);
+      text-align: center;
+      margin: 20px;
+      animation: opening_container_zero_left-animation 1.4s ease-in-out 0s;
+    }
+    @keyframes opening_container_zero_left-animation {
+        0%{opacity: 0;position: relative;top: -600px;}
+        100%{opacity: 1;position: relative;top: 0px;}
+    }
+    .opening_container_zero_left_img{
+        height:400px;
+        width:400px;
+        filter:drop-shadow(1px 1px 2px #000);
+    }
+    .opening_container_zero1_left{
+        position: absolute;
+        height: 320px;
+        width: 400px;
+        margin: 380px 930px 0px 0px;
+        border-radius: 12px;
+        padding: 4px 30px;
+        animation: opening_container_zero1_left-animation 1.4s ease-in-out 0s;
+    }
+    @keyframes opening_container_zero1_left-animation {
+        0%{opacity: 0;margin: -380px 930px 0px 0px;}
+        100%{opacity: 1;margin: 380px 930px 0px 0px;}
+    }
+    .opening_container_zero_anchor{
+        height:50px;
+        width: 340px;
+        padding: 0px 5px;
+        border-radius: 12px;
+        background-color: #fc786b;
+        cursor: pointer;
+        outline: none;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin-left: auto;
+        margin-right: auto;
+        color: #000;
+        transition: all 0.4s ease;
+    }
+    .opening_container_zero_anchor:hover{
+        background-color: #58c7fb;
+        width: 350px;
+        font-size: 17px;
+    }
+    .opening_container_zero1_left_desc{
+        font-size: 16px;
+        font-style: italic;
+    }
+
+
+    .opening_container_one_left{
+      height: 700px;
+      min-width:400px;
+      border: 1px solid;
+      border-radius: 12px;
+      filter:drop-shadow(2px 2px 4px #000);
+      text-align: center;
+      animation: opening_container_one_left-animation 1.4s ease-in-out 0s;
+
+    }
+    @keyframes opening_container_one_left-animation {
+        0%{opacity: 0;position: relative;top: 600px;}
+        100%{opacity: 1;position: relative;top: 0px;}
+    }
+    .opening_container_one_left_img{
+        height:400px;
+        filter:drop-shadow(1px 1px 2px #000);
+    }
+    .opening_container_one_left_anchor{
+        height:50px;
+        width: 160px;
+        border-radius: 12px;
+        background-color: #6dc7df;
+        cursor: pointer;
+        outline: none;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin-left: auto;
+        margin-right: auto;
+        color: #000;
+        transition: all 0.4s ease;
+    }
+    .opening_container_one_left_anchor:hover{
+        background-color: transparent;
+        border: 1px solid #254d78;
+        width: 170px;
+        font-size: 18px;
+    }
+    .opening_container_two_left{
+        position: absolute;
+        height: 320px;
+        width: 400px; 
+        margin: 380px 0px 0px 40px;
+        border-radius: 12px;
+        padding: 4px 30px;
+        animation: opening_container_two_left-animation 1.4s ease-in-out 0s;
+
+    }
+    @keyframes opening_container_two_left-animation {
+        0%{opacity: 0;margin: 1280px 0px 0px 40px;}
+        100%{opacity: 1;margin: 380px 0px 0px 40px;}
+    }
+    .opening_container_two_left_desc{
+        font-size: 16px;
+        font-style: italic;
+    }
+
+
+    .opening_container_one_right{
+      height: 700px;
+      min-width:400px;
+      border: 1px solid;
+      border-radius: 12px;
+      filter:drop-shadow(2px 2px 4px #000);
+      text-align: center;
+      animation: opening_container_one_right-animation 1.4s ease-in-out 0s;
+
+    }
+    @keyframes opening_container_one_right-animation {
+        0%{opacity: 0;position: relative;top: -600px;}
+        100%{opacity: 1;position: relative;top: 0px;}
+    }
+    .opening_container_one_right_img{
+        height:400px;
+        filter:drop-shadow(1px 1px 2px #000);
+    }
+    .opening_container_two_right{
+        position: absolute;
+        height: 320px;
+        width: 400px; 
+        margin: 380px 0px 0px 965px;
+        border-radius: 12px;
+        padding: 4px 30px;
+        animation: opening_container_two_right-animation 1.4s ease-in-out 0s;
+    }
+    @keyframes opening_container_two_right-animation {
+        0%{opacity: 0;margin: -380px 0px 0px 965px;}
+        100%{opacity: 1;margin: 380px 0px 0px 965px;}
+    }
+    .opening_container_one_right_anchor{
+        height:50px;
+        width: 160px;
+        border-radius: 12px;
+        background-color: #4c69eb;
+        cursor: pointer;
+        outline: none;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin-left: auto;
+        margin-right: auto;
+        color: #000;
+        transition: all 0.4s ease;
+    }
+    .opening_container_one_right_anchor:hover{
+        background-color: transparent;
+        border: 1px solid #4c69eb;
+        width:170px;
+    }
+</style> 
+<body>
+    <div class="opening_container_one">
+        <div class="opening_container_zero_left">
+            <img src="./images/loginTypeNew.png" alt="manager" class="opening_container_zero_left_img">
+        </div>
+        <div class="opening_container_zero1_left">
+            <p style="text-align: center;font-size: large;text-decoration: underline;">New to our services?</p>
+            <p class="opening_container_zero1_left_desc">✅SignUp as Manager.</p>
+            <p class="opening_container_zero1_left_desc">✅Create User/Employee accounts.</p>
+            <p class="opening_container_zero1_left_desc">✅Assign Tasks.</p>
+            <p class="opening_container_zero1_left_desc">✅Track tasks assigned to Employees.</p>
+            <p class="opening_container_two_left_desc">✅Performance Evaluation.</p>
+            <a class="opening_container_zero_anchor" href="managerSignup.html">Dont have an account? SignUp here</a>
+        </div>
+
+
+        <div class="opening_container_one_left">
+            <img src="./images/loginTypeManager.png" alt="manager" class="opening_container_one_left_img">
+        </div>
+        <div class="opening_container_two_left">
+            <p style="text-align: center;font-size: large;text-decoration: underline;">Login as Manager to</p>
+            <p class="opening_container_two_left_desc">✅Employee Records Management.</p>
+            <p class="opening_container_two_left_desc">✅Task Assignment and Tracking.</p>
+            <p class="opening_container_two_left_desc">✅Attendance and Time Tracking.</p>
+            <p class="opening_container_two_left_desc">✅Performance Evaluation.</p>
+            <p class="opening_container_two_left_desc">✅Payroll Management.</p>
+            <a class="opening_container_one_left_anchor" href="managerLogin.html">Login</a>
+        </div>
+
+
+        <div class="opening_container_one_right">
+            <img src="./images/loginTypeEmployee.png" alt="employee" class="opening_container_one_right_img">
+        </div>
+        <div class="opening_container_two_right">
+            <p style="text-align: center;font-size: large;text-decoration: underline;">Login as Employee to</p>
+            <p class="opening_container_two_left_desc">✅Personal Profile Management.</p>
+            <p class="opening_container_two_left_desc">✅Task Management.</p>
+            <p class="opening_container_two_left_desc">✅Access to Payslips.</p>
+            <p class="opening_container_two_left_desc">✅Training and Development.</p>
+            <p class="opening_container_two_left_desc">✅Attendance and Time Tracking.</p>
+            <a class="opening_container_one_right_anchor" href="employeeLogin.html">Login</a>
+        </div>
+        <a href="landingpage2.html" class="opening_container_one_anchor"><span style="font-size: 30px;margin-right: 3px;">←</span>Back</a>
+      </div>
+</body>
+</html>
