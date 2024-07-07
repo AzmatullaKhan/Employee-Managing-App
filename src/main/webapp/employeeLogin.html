@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Employee Login</title>
 </head>
 <style>
     *{
@@ -86,7 +86,7 @@
         text-decoration: underline;
         color: #000;
     }
-    .employeeLogin_container_three_button{
+    .employeeLogin_container_three_anchor_login{
         height:50px;
         width:160px;
         align-self: center;
@@ -96,8 +96,13 @@
         border:2px solid #5f497f;
         cursor: pointer;
         transition: all 0.4s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color:#000
     }
-    .employeeLogin_container_three_button:hover{
+    .employeeLogin_container_three_anchor_login:hover{
         background-color: #2dcd95;
         border:none;
         width: 170px;
@@ -137,7 +142,7 @@
                 
                 <a class="employeeLogin_container_three_anchor">Forgot Password? Reset here...</a><br>
                 
-                <button class="employeeLogin_container_three_button">Login</button>
+                <a class="employeeLogin_container_three_anchor_login" href="employeeHome.html">Login</a>
                 <a class="employeeLogin_container_three_anchor_back" href="loginType.html"><span style="font-size: 30px;margin-right: 3px;">←</span>Back</a>
             </div>
         </div>
