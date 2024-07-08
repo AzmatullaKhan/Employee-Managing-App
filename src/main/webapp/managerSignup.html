@@ -75,7 +75,7 @@
         outline: none;
         background-color: transparent;
     }
-    .managerSignup_container_two_button{
+    .managerSignup_container_two_anchor{
         height:50px;
         width:160px;
         align-self: center;
@@ -86,12 +86,18 @@
         cursor: pointer;
         transition: all 0.4s ease;
         user-select: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #000;
     }
-    .managerSignup_container_two_button:hover{
+    .managerSignup_container_two_anchor:hover{
         background-color: #56b493;
         border:none;
         width: 170px;
         font-size: 16px;
+        color:#fff
     }
     .managerSignup_container_two_anchor_back{
         height:50px;
@@ -115,6 +121,7 @@
         border:none;
         width: 170px;
         font-size: 16px;
+        color: #fff;
     }
     .employeeSignup_container_one_manager_img{
         position: absolute;
@@ -153,7 +160,7 @@
             <label for="" class="managerSignup_container_two_label">Password</label>
             <input type="password" name="manager_user_email_password" class="managerSignup_container_two_input" placeholder="*** password ***"><br><br>
 
-            <button class="managerSignup_container_two_button">Create Account</button>
+            <a class="managerSignup_container_two_anchor" href="managerLogin.html">Create Account</a>
             <a class="managerSignup_container_two_anchor_back" href="loginType.html"><span style="font-size: 30px;margin-right: 3px;">←</span>Back</a>
         </div>
     </div>

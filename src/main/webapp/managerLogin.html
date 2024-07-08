@@ -76,7 +76,7 @@
         0%{opacity: 0;position: relative;left: -500px}
         100%{opacity: 1;position: relative;left: 0px}
     }
-    .managerLogin_container_two_button{
+    .managerLogin_container_two_anchor_login{
         height:50px;
         width:160px;
         align-self: center;
@@ -86,8 +86,14 @@
         border:2px solid #5f497f;
         cursor: pointer;
         transition: all 0.4s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: #000;
+        text-decoration: none;
     }
-    .managerLogin_container_two_button:hover{
+    .managerLogin_container_two_anchor_login:hover{
         background-color: #73cec1;
         border:none;
         width: 170px;
@@ -142,7 +148,7 @@
            
             <a class="managerLogin_container_two_anchor">Forgot Password? Reset here...</a><br>
            
-            <button class="managerLogin_container_two_button">Login</button>
+            <a class="managerLogin_container_two_anchor_login" href="managerHome1.html">Login</a>
         </div>
         <a class="managerLogin_container_two_anchor_back" href="loginType.html"><span style="font-size: 30px;margin-right: 3px;">←</span>Back</a>
     </div>
