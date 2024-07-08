@@ -90,11 +90,39 @@
         height: 720px;
         background-size: cover;
         display: flex;
-        justify-content: center;
         align-items: center;
         box-shadow: 0px 0px ;
-        box-shadow: 0 0 5px 4px lightgrey;
         border-radius: 20px;
+    }
+    .managerHome_container_three_one_one_mini1{
+        height:700px;
+        width:300px;
+        border-radius: 20px;
+        margin: 0px 5px;
+        box-shadow: 0 0 5px 4px lightgrey;
+        padding:12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .managerHome_container_three_one_one_mini2{
+        height:700px;
+        width:1050px;
+        border-radius: 20px;
+        margin: 0px 5px;
+        padding:12px;
+        overflow-y: scroll;
+    }
+    .managerHome_container_three_one_one_mini2_eachEmployee{
+        height:200px;
+        width:350px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:10px;
+        box-shadow: 0 0 5px 4px lightgrey;
     }
 
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
@@ -112,12 +140,15 @@
         padding: 0px 40px;
         width:1452px;
         height: 720px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-size: cover;
-        box-shadow: 0 0 5px 4px lightgrey;
         border-radius: 20px;
+    }
+    .managerHome_container_three_two_one_mini{
+        height:340px;
+        width:700px;
+        margin: 10px;
+        border-radius: 22px;
+        padding: 22px;
+        box-shadow: 0 0 5px 4px lightgrey;
     }
 
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
@@ -134,7 +165,7 @@
     .managerHome_container_three_three_one{
         margin: 0 20px;
         width:1452px;
-        height: 740px;
+        height: 720px;
         background-size: cover;
         background-size: cover;
         display: flex;
@@ -166,7 +197,7 @@
     .managerHome_container_three_four_one{
         margin: 0 20px;
         width:1452px;
-        height: 750px;
+        height: 720px;
         background-size: cover;
         background-size: cover;
         display: flex;
@@ -198,7 +229,7 @@
     .managerHome_container_three_five_one{
         margin: 0 20px;
         width:1452px;
-        height: 750px;
+        height: 720px;
         background-size: cover;
         background-size: cover;
         display: flex;
@@ -230,7 +261,7 @@
     .managerHome_container_three_six_one{
         margin: 0 20px;
         width:1452px;
-        height: 750px;
+        height: 720px;
         background-size: cover;
         background-size: cover;
         display: flex;
@@ -255,12 +286,47 @@
         <div class="managerHome_container_three">
             <section  class="managerHome_container_three_one" id="dashboard">
                 <div class="managerHome_container_three_one_one">
-                    DashBoard
+                    <div class="managerHome_container_three_one_one_mini1">
+                        <span>Tasks</span>
+                        <span>Scheduled</span>
+                        <span>Today</span>
+                        <span>For</span>
+                        <span>Manaer</span>
+                    </div>
+                    <div class="managerHome_container_three_one_one_mini2">
+                        <div style="display: flex;">
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                        </div>
+                        <div style="display: flex;">
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section class="managerHome_container_three_two" id="allEmployeeOverview">
                 <div class="managerHome_container_three_two_one">
-                    Overview
+                    <div style="display: flex;">
+                        <div class="managerHome_container_three_two_one_mini"> PieChart</div>
+                        <div class="managerHome_container_three_two_one_mini"> Bar Graph</div>
+                    </div>
+                    <div style="display: flex;">
+                        <div class="managerHome_container_three_two_one_mini"> Line Plot</div>
+                        <div class="managerHome_container_three_two_one_mini"> DoughNut Graph</div>
+                    </div>
                 </div>
             </section>
             <section class="managerHome_container_three_three" id="scheduleMeeting">
