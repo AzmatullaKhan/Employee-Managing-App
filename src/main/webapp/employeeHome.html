@@ -127,7 +127,6 @@
     .employee_container_311_tasksNotDone{
         height:650px;
         width:700px;
-        border: 1px solid;
         margin-right: 20px;
         border-radius: 18px;
         padding: 20px;
@@ -137,8 +136,8 @@
         animation: employee_container_311_tasksNotDone-animation 1.4s ease-in-out 0s;
     }
     @keyframes employee_container_311_tasksNotDone-animation {
-        0%{opacity: 0;position: relative;top: 600px;}
-        100%{opacity: 1;position: relative;top: 0px;}
+        0%{opacity: 0;position: relative;top: 600px;backdrop-filter: blur(4px);}
+        100%{opacity: 1;position: relative;top: 0px;backdrop-filter: blur(4px);}
     }
     .employee_container_311_tasksNotDone_task{
         height:80px;
@@ -150,7 +149,6 @@
     .employee_container_311_tasksDone{
         height:650px;
         width:400px;
-        border: 1px solid;
         border-radius: 18px;
         box-shadow: 0 0 5px 4px lightgrey;
         text-align: center;
@@ -195,7 +193,6 @@
     .employee_container_321_overview{
         height:650px;
         width:800px;
-        border: 1px solid;
         box-shadow: 0 0 5px 4px lightgrey;
         border-radius: 22px;
         display: flex;
@@ -211,8 +208,7 @@
         max-width: 1492px;
         display: flex;
         justify-content: center;
-        align-items: center;
-        
+        align-items: center;        
     }
     .employee_container_three_three_one{
         margin: 0 20px;
@@ -224,18 +220,17 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        margin: 0px 200px 0px 0px;
     }
     .employee_container_331_one{
         height: 650px;
         width:500px;
-        border: 1px solid;
         box-shadow: 0 0 5px 4px lightgrey;
         border-radius: 22px;
         padding: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 0px 150px 0px 0px;
     }
     .employeeHome_container_one_nav_anchor:nth-child(3):hover{
         background-color: #4d69ea;
