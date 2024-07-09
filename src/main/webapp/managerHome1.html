@@ -22,6 +22,10 @@
         justify-content: center;
         align-items: center;
     }
+    br{
+        pointer-events: none;
+        user-select: none;
+    }
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
 
     .managerHome_container_one{ 
@@ -35,7 +39,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        animation: managerHome_container_one_nav-animation 1.4s ease-in-out 0s;
+        animation: managerHome_container_one_nav-animation 0.8s ease-in-out 0s;
     }
     @keyframes managerHome_container_one_nav-animation {
         0%{opacity: 0;position: relative;top: -600px;}
@@ -116,13 +120,38 @@
     }
     .managerHome_container_three_one_one_mini2_eachEmployee{
         height:200px;
-        width:350px;
+        width:325px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 12px;
+        margin:10px;
+        box-shadow: 0 0 5px 4px lightgrey;
+        cursor: pointer;
+        transition: all 0.4s ease; 
+    }
+    .managerHome_container_three_one_one_mini2_eachEmployee:hover{
+        /* height:210px;
+        width:360px; */
+        box-shadow: 0 0 6px 12px lightgrey;
+    }
+    .managerHome_container_three_one_one_mini2_eachEmployee_img{
+        height:100px;
+        width:100px;
+        margin: 5px;
+    }
+    .managerHome_container_three_one_one_mini2_eachEmployee_div{
+        height: 150px;
+        width: 190px;
         border-radius: 12px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin:10px;
-        box-shadow: 0 0 5px 4px lightgrey;
+        flex-direction: column;
+    }
+    .managerHome_container_three_one_one_mini2_eachEmployee_div h3{
+        margin: 2px;
     }
 
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
@@ -183,6 +212,47 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+    }
+
+    .managerHome_container_three_three_two_label{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: bolder;
+        margin: 10px 0px 10px 0px;
+        text-align: center;
+        color: #4949c6;
+    }
+    .managerHome_container_three_three_two_input{
+        height:30px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid;
+        outline: none;
+        background-color: transparent;
+        text-align: center;
+        width:90%;
+    }
+    
+    .managerHome_container_three_three_two_button{
+        height:50px;
+        width:130px;
+        align-self: center;
+        margin: 20px 0px;
+        background-color: transparent;
+        border-radius: 12px;
+        border:1px solid #4949c6;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        outline: none;
+
+    }
+    .managerHome_container_three_three_two_button:hover{
+        background-color: #febe69;
+        border:none;
+        width: 140px;
+        font-size: 16px;
     }
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
     .managerHome_container_three_four{
@@ -215,6 +285,44 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+    }
+    .managerHome_container_three_four_two_label{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: bolder;
+        margin: 10px 0px 10px 0px;
+        text-align: center;
+        color: #4949c6;
+    }
+    .managerHome_container_three_four_two_input{
+        height:30px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid;
+        outline: none;
+        background-color: transparent;
+        text-align: center;
+        width:90%;
+    }
+    .managerHome_container_three_four_two_button{
+        height:50px;
+        width:130px;
+        align-self: center;
+        margin: 20px 0px;
+        background-color: transparent;
+        border-radius: 12px;
+        border:1px solid #4949c6;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        outline: none;
+    }
+    .managerHome_container_three_four_two_button:hover{
+        background-color: #febe69;
+        border:none;
+        width: 140px;
+        font-size: 16px;
     }
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
     .managerHome_container_three_five{
@@ -246,7 +354,46 @@
         box-shadow: 0 0 5px 4px lightgrey;
         display: flex;
         justify-content: center;
+        flex-direction: column;
         align-items: center;
+        padding: 20px 30px;
+    }
+    .managerHome_container_three_five_two_label{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: bolder;
+        margin: 10px 0px 10px 0px;
+        text-align: center;
+        color: #4949c6;
+    }
+    .managerHome_container_three_five_two_input{
+        height:30px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid;
+        outline: none;
+        background-color: transparent;
+        text-align: center;
+        width:90%;
+    }
+    .managerHome_container_three_five_two_button{
+        height:50px;
+        width:130px;
+        align-self: center;
+        margin: 20px 0px;
+        background-color: transparent;
+        border-radius: 12px;
+        border:1px solid #4949c6;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        outline: none;
+    }
+    .managerHome_container_three_five_two_button:hover{
+        background-color: #febe69;
+        border:none;
+        width: 140px;
+        font-size: 16px;
     }
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
     .managerHome_container_three_six{
@@ -271,6 +418,28 @@
 
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
 
+.managerHome_container_three_seven{
+        min-height:750px;
+        min-width: 1492px;
+        max-height:750px;
+        max-width: 1492px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .managerHome_container_three_seven_one{
+        margin: 0 20px;
+        width:1452px;
+        height: 720px;
+        background-size: cover;
+        background-size: cover;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+
+/* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
+
 </style>
 <body>
     <div class="managerHome_container_one">
@@ -278,8 +447,9 @@
             <a class="managerHome_container_one_nav_anchor" href="#dashboard">Dashboasrd</a>
             <a class="managerHome_container_one_nav_anchor" href="#allEmployeeOverview">Overview</a>
             <a class="managerHome_container_one_nav_anchor" href="#scheduleMeeting">Schedule Meeting</a>
-            <a class="managerHome_container_one_nav_anchor" href="#getSpecificEmployee">Get Employee</a>
-            <a class="managerHome_container_one_nav_anchor" href="#addUser">Add User</a>
+            <a class="managerHome_container_one_nav_anchor" href="#getSpecificEmployee">Edit Employee</a>
+            <a class="managerHome_container_one_nav_anchor" href="#creatEemployee">Create Employee</a>
+            <a class="managerHome_container_one_nav_anchor" href="#addTask">Add Task</a>
             <a class="managerHome_container_one_nav_anchor" href="#profile">Profile</a>
             <a class="managerHome_container_one_nav_anchor" href="loginType.html"><span style="font-size: 30px;margin-right: 3px;">←</span>Logout</a>
         </div>
@@ -295,24 +465,26 @@
                     </div>
                     <div class="managerHome_container_three_one_one_mini2">
                         <div style="display: flex;">
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
-                        </div>
-                        <div style="display: flex;">
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
-                        </div>
-                        <div style="display: flex;">
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
-                        </div>
-                        <div style="display: flex;">
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">Users Details</div>
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">
+                                <img src="./images/employeeMale.png" class="managerHome_container_three_one_one_mini2_eachEmployee_img"/>
+                                <div class="managerHome_container_three_one_one_mini2_eachEmployee_div">
+                                    <h3>Name</h3>     
+                                    <h3>Employee ID</h3>     
+                                    <h3>Working or Not</h3> 
+                                    <h3>Group Number</h3>
+                                    <h3>Role</h3>  
+                                </div>
+                            </div>
+                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">
+                                <img src="./images/employeeFemale.png" class="managerHome_container_three_one_one_mini2_eachEmployee_img"/>
+                                <div class="managerHome_container_three_one_one_mini2_eachEmployee_div">
+                                    <h3>Name</h3>     
+                                    <h3>Employee ID</h3>     
+                                    <h3>Working or Not</h3> 
+                                    <h3>Group Number</h3>
+                                    <h3>Role</h3>  
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -332,26 +504,94 @@
             <section class="managerHome_container_three_three" id="scheduleMeeting">
                 <div class="managerHome_container_three_three_one">
                     <div class="managerHome_container_three_three_two">
-                        MeetingScheduling
+                        <label for="" class="managerHome_container_three_three_two_label">Email</label>
+                        <input type="email" name="scheduleMeeting_email_id" class="managerHome_container_three_three_two_input" placeholder="*** Email ***"><br><br>
+                    
+                        <label for="" class="managerHome_container_three_three_two_label">Group ID's</label>
+                        <input type="email" name="scheduleMeeting_gropu" class="managerHome_container_three_three_two_input" placeholder="*** Enter Group ID's seperated by ',' ***"><br><br>
+
+                        <label for="" class="managerHome_container_three_three_two_label">Subject</label>
+                        <input type="text" name="scheduleMeeting_email_subject" class="managerHome_container_three_three_two_input" placeholder="*** Subject ***"><br><br>
+                    
+                        <label for="" class="managerHome_container_three_three_two_label">Context</label>
+                        <textarea style="height: 100px;text-align: start;" type="text" name="scheduleMeeting_email_context" class="managerHome_container_three_three_two_input" placeholder="*** Context ***" ></textarea><br>
+
+                        <button class="managerHome_container_three_three_two_button">Summon</button>
                     </div>
                 </div>
             </section>
             <section class="managerHome_container_three_four" id="getSpecificEmployee">
                 <div class="managerHome_container_three_four_one">
                     <div class="managerHome_container_three_four_two">
-                        Get Employee Details
+                        
+                        <label for="" class="managerHome_container_three_four_two_label">ID</label>
+                        <input type="text" name="getSpecificEmployee_id" class="managerHome_container_three_four_two_input" placeholder="*** Enter the employee ID ***"><br><br>
+                        <button class="managerHome_container_three_four_two_button">Get Detaile</button><br><br>
+
+
+                        <label for="" class="managerHome_container_three_five_two_label">Name</label>
+                        <input type="text" name="createEmployee_name" class="managerHome_container_three_five_two_input" placeholder="*** Name ***"><br>
+
+                        <label for="" class="managerHome_container_three_four_two_label">Role</label>
+                        <select name="getSpecificEmployee_role" class="managerHome_container_three_four_two_input" style="text-align: center;" aria-readonly="true">
+                            <option>Role 1</option>
+                            <option>Role 2</option>
+                            <option>Role 3</option>
+                            <option>Role 4</option>
+                        </select><br>
+
+                        <label for="" class="managerHome_container_three_four_two_label">Group</label>
+                        <input type="tezt" name="getSpecificEmployee_group" class="managerHome_container_three_four_two_input" placeholder="*** Assign Into a Group ***"><br>
+
+                        <div style="display: flex;">
+                            <button class="managerHome_container_three_four_two_button">Edit</button>
+                            <button class="managerHome_container_three_four_two_button">Delete</button>
+                        </div>
+
                     </div>
                 </div>
             </section>
-            <section class="managerHome_container_three_five" id="addUser">
+            <section class="managerHome_container_three_five" id="creatEemployee">
                 <div class="managerHome_container_three_five_one">
                     <div class="managerHome_container_three_five_two">
-                        Add new Employee
+
+                        <label for="" class="managerHome_container_three_five_two_label">Name</label>
+                        <input type="text" name="createEmployee_name" class="managerHome_container_three_five_two_input" placeholder="*** Name ***"><br>
+
+                        <label for="" class="managerHome_container_three_five_two_label">ID</label>
+                        <input type="text" name="createEmployee_id" class="managerHome_container_three_five_two_input" placeholder="*** ID given by company ***"><br>
+
+                        <label for="" class="managerHome_container_three_five_two_label">Password</label>
+                        <input type="text" name="createEmployee_password" class="managerHome_container_three_five_two_input" readonly value="*** Password is auto generated, (Role@ID) ***"><br>
+
+                        <label for="" class="managerHome_container_three_five_two_label">Role</label>
+                        <select name="createEmployee_role" class="managerHome_container_three_five_two_input" style="text-align: center;" >
+                            <option>Role 1</option>
+                            <option>Role 2</option>
+                            <option>Role 3</option>
+                            <option>Role 4</option>
+                        </select><br>
+
+                        <label for="" class="managerHome_container_three_five_two_label">Gender</label>
+                        <div>
+                            <input type="radio" id="createEmployee_maleRadio" name="gender" value="male" id="male"/> Male<br>
+                            <input type="radio" id="createEmployee_femaleRadio" name="gender" value="female" id="female"/> FeMale<br>
+                        </div><br>
+
+                        <label for="" class="managerHome_container_three_five_two_label">Group</label>
+                        <input type="tezt" name="createEmployee_group" class="managerHome_container_three_five_two_input" placeholder="*** Assign Into a Group ***"><br>
+
+                        <button class="managerHome_container_three_five_two_button">Create</button>
                     </div>
                 </div>
             </section>
-            <section class="managerHome_container_three_six" id="profile">
+            <section class="managerHome_container_three_six" id="addTask">
                 <div class="managerHome_container_three_six_one">
+                    Add Task
+                </div>
+            </section>
+            <section class="managerHome_container_three_seven" id="profile">
+                <div class="managerHome_container_three_seven_one">
                     Manager Profile
                 </div>
             </section>
