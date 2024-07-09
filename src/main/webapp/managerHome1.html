@@ -86,6 +86,11 @@
         display: flex;
         justify-content: center;
         align-items: center;        
+        animation: managerHome_container_three_one-animation 1s ease-in-out 0s;
+    }
+    @keyframes managerHome_container_three_one-animation {
+        0%{opacity: 0;}
+        100%{opacity: 1;}
     }
     .managerHome_container_three_one_one{
         margin: 0 20px;
@@ -109,6 +114,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        animation: managerHome_container_three_one_one_mini1-animation 0.8s ease-in-out 0s;
+    }
+    @keyframes managerHome_container_three_one_one_mini1-animation {
+        0%{opacity: 0;position: relative;top: 600px;backdrop-filter: blur(4px);}
+        100%{opacity: 1;position: relative;top: 0px;backdrop-filter: blur(4px);}
     }
     .managerHome_container_three_one_one_mini2{
         height:700px;
@@ -117,6 +127,7 @@
         margin: 0px 5px;
         padding:12px;
         overflow-y: scroll;
+        animation: managerHome_container_three_one_one_mini1-animation 1.2s ease-in-out 0s;
     }
     .managerHome_container_three_one_one_mini2_eachEmployee{
         height:200px;
@@ -249,10 +260,11 @@
 
     }
     .managerHome_container_three_three_two_button:hover{
-        background-color: #febe69;
+        background-color: #3030e7;
         border:none;
         width: 140px;
         font-size: 16px;
+        color: #fff;
     }
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
     .managerHome_container_three_four{
@@ -319,10 +331,12 @@
         outline: none;
     }
     .managerHome_container_three_four_two_button:hover{
-        background-color: #febe69;
+        background-color: #3030e7;
         border:none;
         width: 140px;
         font-size: 16px;
+        color: #fff;
+
     }
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
     .managerHome_container_three_five{
@@ -390,10 +404,12 @@
         outline: none;
     }
     .managerHome_container_three_five_two_button:hover{
-        background-color: #febe69;
+        background-color: #3030e7;
         border:none;
         width: 140px;
         font-size: 16px;
+        color: #fff;
+
     }
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
     .managerHome_container_three_six{
