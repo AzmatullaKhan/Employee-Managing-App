@@ -21,6 +21,24 @@
         justify-content: center;
         align-items: center;
     }
+    .error_animation{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: 700;
+        margin: 10px 0px 10px 0px;
+        user-select: none;
+        width: fit-content;
+        border-radius: 5px;
+        padding: 0px 2px;
+        animation: error_animation-animation 1s ease-in-out 0s;
+    }
+    @keyframes error_animation-animation {
+        0%{background-color: red;}
+        25%{background-color: transparent;}
+        50%{background-color: red;}
+        75%{background-color: transparent;}
+        100%{background-color: red;}
+    }
 
     .managerLogin_container_one{
         height: 850px;
@@ -125,7 +143,7 @@
     }
     .managerLogin_container_two_anchor{
         border-radius: 12px;
-        background-color:#fff;
+        background-color:transparent;
         cursor: pointer;
         outline: none;
         font-size: 16px;
@@ -138,19 +156,36 @@
 </style>
 <body>
     <div class="managerLogin_container_one">
-        <div class="managerLogin_container_two">
+        <form class="managerLogin_container_two" onsubmit="return validateManagerLogin()">
            
-            <label for="" class="managerLogin_container_two_label">Company mail id</label>
-            <input type="text" name="manager_email_id" class="managerLogin_container_two_input" placeholder="*** mail ID ***"><br>
+            <label for="" class="managerLogin_container_two_label" id="manager_user_id_label">Company ID</label>
+            <input type="text" name="manager_user_id" id="manager_user_id" class="managerLogin_container_two_input" placeholder="*** ID ***" onkeyup="checkMangerID()" required><br>
            
             <label for="" class="managerLogin_container_two_label">Password</label>
-            <input type="password" name="manager_email_password" class="managerLogin_container_two_input" placeholder="*** password ***"><br><br>
+            <input type="password" name="manager_email_password" class="managerLogin_container_two_input" placeholder="*** password ***" required minlength="8"><br><br>
            
             <a class="managerLogin_container_two_anchor">Forgot Password? Reset here...</a><br>
            
-            <a class="managerLogin_container_two_anchor_login" href="managerHome1.html">Login</a>
-        </div>
+            <button type="submit" class="managerLogin_container_two_anchor_login">Login</button >
+        </form>
         <a class="managerLogin_container_two_anchor_back" href="loginType.html"><span style="font-size: 30px;margin-right: 3px;">←</span>Back</a>
     </div>
+    <script>
+        function validateManagerLogin(){
+            window.location.href='/managerHome1.html'
+            return false
+        }
+        function checkMangerID(){
+            let manager=document.getElementById('manager_user_id')
+            let char=manager.value[manager.value.length-1]
+            if(!((char>='a' && char<='z') || (char>='A' && char<='Z') || (char>='0' && char<='9') || char===' ' || !char)){
+                document.getElementById('manager_user_id_label').className='error_animation'
+                setTimeout(()=>{
+                    document.getElementById('manager_user_id_label').className='managerLogin_container_two_label'
+                }, 1000)
+                manager.value=manager.value.slice(0, manager.value.length-1)
+            }
+        }
+    </script>
 </body>
 </html>

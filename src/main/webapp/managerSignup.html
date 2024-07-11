@@ -15,12 +15,34 @@
     *::-webkit-scrollbar{
         display: none;
     }
+    br{
+        user-select: none;
+        pointer-events: none;
+    }
     body{
         margin:0px;
         background-color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .error_animation{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: 700;
+        margin: 10px 0px 10px 0px;
+        user-select: none;
+        width: fit-content;
+        border-radius: 5px;
+        padding: 0px 2px;
+        animation: error_animation-animation 1s ease-in-out 0s;
+    }
+    @keyframes error_animation-animation {
+        0%{background-color: red;}
+        25%{background-color: transparent;}
+        50%{background-color: red;}
+        75%{background-color: transparent;}
+        100%{background-color: red;}
     }
     .employeeSignup_container_one{
         height: 850px;
@@ -43,9 +65,9 @@
         user-select: none;
     }
     .employeeSignup_container_two{
-        height:650px;
+        height:700px;
         width:500px;
-        margin: 100px 0px 0px 150px;
+        margin: 130px 0px 0px 150px;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -138,31 +160,116 @@
         0%{left: -800px;opacity: 0;}
         100%{left: 0px;opacity: 1;}
     }
+    .employeeSignup_container_two_small_eye{
+        position: absolute;
+        margin-top: 360px;
+        margin-left: 410px;
+        font-size: 16px;
+        cursor: pointer;
+    }
     
 </style>
 <body>
     <div class="employeeSignup_container_one">
         <img class="employeeSignup_container_one_img" src="./images/signedUp.png" alt="image">
         <img class="employeeSignup_container_one_manager_img" src="./images/manager.jpg" alt="image">
-        <div class="employeeSignup_container_two">
-            <label for="" class="managerSignup_container_two_label">ID</label>
-            <input type="text" name="manager_user_id" class="managerSignup_container_two_input" placeholder="*** ID given by company ***"><br>
+        <form class="employeeSignup_container_two" onsubmit="return validateManager()">
+            <label for="" class="managerSignup_container_two_label" id="manager_user_id_label">ID</label>
+            <input type="text" name="manager_user_id" id="manager_user_id" class="managerSignup_container_two_input" placeholder="*** ID given by company ***" onkeyup="checkMangerID()" required><br>
 
-            <label for="" class="managerSignup_container_two_label">Company Name</label>
-            <input type="text" name="manager_name" class="managerSignup_container_two_input" placeholder="*** Company Name ***"><br>
+            <label for="" class="managerSignup_container_two_label" id="manager_user_name_label">Name</label>
+            <input type="text" name="manager_user_name" id="manager_user_name" class="managerSignup_container_two_input" placeholder="*** Name ***" onkeyup="checkManagerName()" required><br>
+
+            <label for="" class="managerSignup_container_two_label" id="manager_user_companyname_label">Company Name</label>
+            <input type="text" name="manager_user_companyname" id="manager_user_companyname" class="managerSignup_container_two_input" placeholder="*** Company Name ***" onkeyup="checkManagerCompany()" required><br>
 
             <label for="" class="managerSignup_container_two_label">Role</label>
             <input type="text" name="manager_user_role" class="managerSignup_container_two_input" value="Manager" style="text-align: center;" readonly><br>
             
-            <label for="" class="managerSignup_container_two_label">Company Mail</label>
-            <input type="text" name="manager_user_email_id" class="managerSignup_container_two_input" placeholder="*** Mail ID ***"><br>
+            <label for="" class="managerSignup_container_two_label">Company Gmail</label>
+            <input type="text" name="manager_user_email_id" class="managerSignup_container_two_input" placeholder="*** Mail ID ***" required><br>
             
             <label for="" class="managerSignup_container_two_label">Password</label>
-            <input type="password" name="manager_user_email_password" class="managerSignup_container_two_input" placeholder="*** password ***"><br><br>
+            <input type="password" name="manager_user_id_password" id="manager_user_id_password" class="managerSignup_container_two_input" placeholder="*** password ***" minlength="8" required><br><br>
+            <div class='employeeSignup_container_two_small_eye' onclick="handleEyeClick()">👁️<p id='employeeSignup_container_two_small_eye_cross' style="position: relative; top: -30px;left: 5px;font-size: 24px;opacity: 1;margin-top: 7px;">/</p></div>
 
-            <a class="managerSignup_container_two_anchor" href="managerLogin.html">Create Account</a>
+            <button class="managerSignup_container_two_anchor" type="submit">Create Account</button>
             <a class="managerSignup_container_two_anchor_back" href="loginType.html"><span style="font-size: 30px;margin-right: 3px;">←</span>Back</a>
-        </div>
+        </form>
     </div>
+    <script>
+        function validatePassword(pass){
+            let cap=Number(0);
+            let sp=Number(0);
+            let num=Number(0);
+            for(let i=0;i<pass.length;i++){
+                if((pass[i]>='A' && pass[i]<='Z') && !cap)
+                    cap=1;
+                if((pass[i]==='@' || pass[i]==='#' || pass[i]==='$' || pass[i]==='_' || pass[i]==='&') && !sp)
+                    sp=1;
+                else if((pass[i]>='0' && pass[i]<='9') && !num)
+                    num=1;
+            }
+            return (cap && sp && num)
+        }
+
+        function validateManager() {
+            let pass = validatePassword(document.getElementById('manager_user_id_password').value)
+            if(pass)
+                window.location.href='/managerLogin.html'
+            else   
+                alert("Your password must have a one special character, one alpha numeric and one capital letter")
+            
+            return false    
+        }
+
+        function checkMangerID(){
+            let manager_id=document.getElementById('manager_user_id')
+            let char=manager_id.value[manager_id.value.length-1]
+            if(!((char>='a' && char<='z') || (char>='A' && char<='Z') || (char>='0' && char<='9') || char===' ' || !char)){
+                document.getElementById('manager_user_id_label').className='error_animation'
+                setTimeout(()=>{
+                    document.getElementById('manager_user_id_label').className='managerSignup_container_two_label'
+                }, 1000)
+                manager_id.value=manager_id.value.slice(0, manager_id.value.length-1)
+            }
+        }
+
+        function checkManagerName(){
+            let manager=document.getElementById('manager_user_name')
+            let char=manager.value[manager.value.length-1]
+            if(!((char>='a' && char<='z') || (char>='A' && char<='Z') || char===' ' || !char)){
+                document.getElementById('manager_user_name_label').className='error_animation'
+                setTimeout(()=>{
+                    document.getElementById('manager_user_name_label').className='managerSignup_container_two_label'
+                }, 1000)
+                manager.value=manager.value.slice(0, manager.value.length-1)
+            }
+        }
+
+        function checkManagerCompany() {
+            let manager=document.getElementById('manager_user_companyname')
+            let char=manager.value[manager.value.length-1]
+            if(!((char>='a' && char<='z') || (char>='A' && char<='Z') || (char>='0' && char<='9') || char===' ' || !char )){
+                document.getElementById('manager_user_companyname_label').className='error_animation'
+                setTimeout(()=>{
+                    document.getElementById('manager_user_companyname_label').className='managerSignup_container_two_label'
+                }, 1000)
+                manager.value=manager.value.slice(0, manager.value.length-1)
+            }
+        }
+
+        function handleEyeClick(){
+            let type=document.getElementById('manager_user_id_password').type
+            if(type==='password'){
+                document.getElementById('manager_user_id_password').type='text'
+                document.getElementById('employeeSignup_container_two_small_eye_cross').style.opacity=0
+            }
+            else{
+                document.getElementById('manager_user_id_password').type='password'
+                document.getElementById('employeeSignup_container_two_small_eye_cross').style.opacity=1
+            }
+        }
+    </script>
 </body>
 </html>
