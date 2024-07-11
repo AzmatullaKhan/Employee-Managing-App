@@ -565,8 +565,8 @@
                         <button class="managerHome_container_three_four_two_button" type="button">Get Detaile</button><br><br>
 
 
-                        <label for="createEmployee_name" id="createEmployee_name_label" class="managerHome_container_three_five_two_label">Name</label>
-                        <input type="text" name="createEmployee_name" id="createEmployee_name" class="managerHome_container_three_five_two_input" placeholder="*** Name ***" onkeyup="checkGetSpecificEmployeeName()" required><br>
+                        <label for="getSpecificEmployee_name" id="getSpecificEmployee_name_label" class="managerHome_container_three_five_two_label">Name</label>
+                        <input type="text" name="createEmployee_name" id="getSpecificEmployee_name" class="managerHome_container_three_five_two_input" placeholder="*** Name ***" onkeyup="checkGetSpecificEmployeeName()" required><br>
 
                         <label for="" class="managerHome_container_three_four_two_label">Role</label>
                         <select name="getSpecificEmployee_role" class="managerHome_container_three_four_two_input" style="text-align: center;" aria-readonly="true">
@@ -639,7 +639,7 @@
             alert('Meeting has been successfully Scheduled. Reast Easy Now')
             document.getElementById('scheduleMeeting_group').value=""
             document.getElementById('scheduleMeeting_email_subject').value=""
-            window.location.href='/managerHome1.html#dashboard'
+            window.location.href='/Employee-Managing-App/managerHome1.html#dashboard'
             return false
         }
 
@@ -671,13 +671,14 @@
             document.getElementById('createEmployee_name').value=""
             document.getElementById('createEmployee_id').value=""
             document.getElementById('createEmployee_group').value=""
-            window.location.href='/managerHome1.html'
+            window.location.href='/Employee-Managing-App/managerHome1.html'
             return false
         }
 
         function checkCreateEmployeeName(){
             let manager=document.getElementById('createEmployee_name')
             let char=manager.value[manager.value.length-1]
+            console.log(char)
             if(!((char>='a' && char<='z') || (char>='A' && char<='Z') || char===' ' || !char)){
                 document.getElementById('createEmployee_name_label').className='error_animation'
                 setTimeout(()=>{
@@ -716,7 +717,7 @@
             document.getElementById('getSpecificEmployee_id').value=""
             document.getElementById('createEmployee_name').value=""
             document.getElementById('getSpecificEmployee_group').value=""
-            window.location.href='/managerHome1.html'
+            window.location.href='/Employee-Managing-App/managerHome1.html'
             return false;
         }
         function checkGetSpecificEmployeeID(){
@@ -731,12 +732,12 @@
             }
         }
         function checkGetSpecificEmployeeName(){
-            let manager=document.getElementById('createEmployee_name')
+            let manager=document.getElementById('getSpecificEmployee_name')
             let char=manager.value[manager.value.length-1]
             if(!((char>='a' && char<='z') || (char>='A' && char<='Z') || char===' ' || !char)){
-                document.getElementById('createEmployee_name_label').className='error_animation'
+                document.getElementById('getSpecificEmployee_name_label').className='error_animation'
                 setTimeout(()=>{
-                    document.getElementById('createEmployee_name_label').className='managerHome_container_three_four_two_label'
+                    document.getElementById('getSpecificEmployee_name_label').className='managerHome_container_three_four_two_label'
                 }, 1000)
                 manager.value=manager.value.slice(0, manager.value.length-1)
             }

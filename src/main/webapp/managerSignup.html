@@ -173,7 +173,7 @@
     <div class="employeeSignup_container_one">
         <img class="employeeSignup_container_one_img" src="./images/signedUp.png" alt="image">
         <img class="employeeSignup_container_one_manager_img" src="./images/manager.jpg" alt="image">
-        <form class="employeeSignup_container_two" onsubmit="return validateManager()">
+        <form class="employeeSignup_container_two" action="ma" method="post" id="managerSignUpForm">
             <label for="" class="managerSignup_container_two_label" id="manager_user_id_label">ID</label>
             <input type="text" name="manager_user_id" id="manager_user_id" class="managerSignup_container_two_input" placeholder="*** ID given by company ***" onkeyup="checkMangerID()" required><br>
 
@@ -187,7 +187,7 @@
             <input type="text" name="manager_user_role" class="managerSignup_container_two_input" value="Manager" style="text-align: center;" readonly><br>
             
             <label for="" class="managerSignup_container_two_label">Company Gmail</label>
-            <input type="text" name="manager_user_email_id" class="managerSignup_container_two_input" placeholder="*** Mail ID ***" required><br>
+            <input type="email" name="manager_user_email_id" class="managerSignup_container_two_input" placeholder="*** Mail ID ***" required><br>
             
             <label for="" class="managerSignup_container_two_label">Password</label>
             <input type="password" name="manager_user_id_password" id="manager_user_id_password" class="managerSignup_container_two_input" placeholder="*** password ***" minlength="8" required><br><br>
@@ -198,6 +198,7 @@
         </form>
     </div>
     <script>
+        
         function validatePassword(pass){
             let cap=Number(0);
             let sp=Number(0);
@@ -216,7 +217,7 @@
         function validateManager() {
             let pass = validatePassword(document.getElementById('manager_user_id_password').value)
             if(pass)
-                window.location.href='/managerLogin.html'
+                window.location.href='/Employee-Managing-App/managerLogin.html'
             else   
                 alert("Your password must have a one special character, one alpha numeric and one capital letter")
             
