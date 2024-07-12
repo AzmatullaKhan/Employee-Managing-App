@@ -1,0 +1,124 @@
+
+    *{
+    box-sizing: border-box;
+    font-family: monospace;
+    scroll-behavior: smooth;
+    }
+    *::-webkit-scrollbar{
+        display: none;
+    }
+    body{
+        margin:0px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .employeeLogin_container_one{
+        height: 850px;
+        width:1492px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .employeeLogin_container_two{
+        background-image: url('../images/employyeLogin.png');
+        background-size: cover;
+        height:700px;
+        width:1200px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        animation: employeeLogin_container_two-animation 1s ease-in-out 0s;
+    }
+    @keyframes employeeLogin_container_two-animation {
+        0%{opacity: 0;position: relative;left: -500px}
+        100%{opacity: 1;position: relative;left: 0px}
+    }
+    .employeeLogin_container_three{
+        height:460px;
+        width:400px;
+        margin: 220px 120px 0px 0px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        animation: employeeLogin_container_three-animation 1s ease-in-out 0s;
+    }
+    @keyframes employeeLogin_container_three-animation {
+        0%{opacity: 0;position: relative;left: 800px}
+        100%{opacity: 1;position: relative;left: 0px}
+    }
+    .employeeLogin_container_three_label{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: 700;
+        margin: 10px 0px 10px 0px;
+    }
+    .employeeLogin_container_three_input{
+        height:30px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid;
+        outline: none;
+        background-color: transparent;
+    }
+    .employeeLogin_container_three_anchor{
+        border-radius: 12px;
+        background-color:#fff;
+        cursor: pointer;
+        outline: none;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: underline;
+        color: #000;
+    }
+    .employeeLogin_container_three_anchor_login{
+        height:50px;
+        width:160px;
+        align-self: center;
+        margin: 20px 0px;
+        background-color: transparent;
+        border-radius: 12px;
+        border:2px solid #5f497f;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color:#000
+    }
+    .employeeLogin_container_three_anchor_login:hover{
+        background-color: #2dcd95;
+        border:none;
+        width: 170px;
+        font-size: 16px;
+    }
+    .employeeLogin_container_three_anchor_back{
+        height:50px;
+        width:160px;
+        align-self: center;
+        margin: 20px 0px;
+        background-color: transparent;
+        border-radius: 12px;
+        border:2px solid #5f497f;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+    .employeeLogin_container_three_anchor_back:hover{
+        background-color: #2dcd95;
+        border:none;
+        width: 170px;
+        font-size: 16px;
+    }

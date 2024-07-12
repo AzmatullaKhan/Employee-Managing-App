@@ -1,0 +1,163 @@
+
+    *{
+        box-sizing: border-box;
+        font-family: monospace;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+    *::-webkit-scrollbar{
+        display: none;
+    }
+    br{
+        user-select: none;
+        pointer-events: none;
+    }
+    body{
+        margin:0px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .error_animation{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: 700;
+        margin: 10px 0px 10px 0px;
+        user-select: none;
+        width: fit-content;
+        border-radius: 5px;
+        padding: 0px 2px;
+        animation: error_animation-animation 1s ease-in-out 0s;
+    }
+    @keyframes error_animation-animation {
+        0%{background-color: red;}
+        25%{background-color: transparent;}
+        50%{background-color: red;}
+        75%{background-color: transparent;}
+        100%{background-color: red;}
+    }
+    .employeeSignup_container_one{
+        height: 850px;
+        width:1492px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        animation: employeeSignup_container_one-animation 1s ease-in-out 0s;
+
+    }
+    @keyframes employeeSignup_container_one-animation {
+        0%{opacity: 0;position: relative;left: 300px}
+        100%{opacity: 1;position: relative;left: 0px}
+    }
+    .employeeSignup_container_one_img{
+        height:850px;
+        width:1492px;
+        position: absolute;
+        pointer-events: none;
+        user-select: none;
+    }
+    .employeeSignup_container_two{
+        height:700px;
+        width:500px;
+        margin: 130px 0px 0px 150px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px 30px;
+        border: 1px solid #56b493;
+        z-index: 2;
+        border-radius: 12px;
+        animation: employeeSignup_container_two-animation 1s ease-in-out 0s;
+    }
+    @keyframes employeeSignup_container_two-animation {
+        0%{position: relative;left: -800px;}
+        100%{position: relative;left: 0px;}
+    }
+    .managerSignup_container_two_label{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: 700;
+        margin: 10px 0px 10px 0px;
+        user-select: none;
+    }
+    .managerSignup_container_two_input{
+        height:30px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid;
+        outline: none;
+        background-color: transparent;
+    }
+    .managerSignup_container_two_anchor{
+        height:50px;
+        width:160px;
+        align-self: center;
+        margin: 20px 0px;
+        background-color: transparent;
+        border-radius: 12px;
+        border:2px solid #56b493;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        user-select: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #000;
+    }
+    .managerSignup_container_two_anchor:hover{
+        background-color: #56b493;
+        border:none;
+        width: 170px;
+        font-size: 16px;
+        color:#fff
+    }
+    .managerSignup_container_two_anchor_back{
+        height:50px;
+        width:160px;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0px;
+        background-color: transparent;
+        border-radius: 12px;
+        border:2px solid #56b493;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        color: #000;
+        text-decoration: none;
+        user-select: none;
+    }
+    .managerSignup_container_two_anchor_back:hover{
+        background-color: #56b493;
+        border:none;
+        width: 170px;
+        font-size: 16px;
+        color: #fff;
+    }
+    .employeeSignup_container_one_manager_img{
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        top: 0px;
+        z-index: 3;
+        margin: 0px 0px 0px 300px;
+        animation: employeeSignup_container_one_manager_img-animation 1s ease-in-out 0s;
+        user-select: none;
+        pointer-events: none;
+    }
+    @keyframes employeeSignup_container_one_manager_img-animation {
+        0%{left: -800px;opacity: 0;}
+        100%{left: 0px;opacity: 1;}
+    }
+    .employeeSignup_container_two_small_eye{
+        position: absolute;
+        margin-top: 360px;
+        margin-left: 410px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
