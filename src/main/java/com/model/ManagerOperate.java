@@ -22,4 +22,21 @@ public class ManagerOperate {
 		
 	}
 	
+	public String getPasswordManager(String mid) throws Exception{
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "4356");
+		
+		Statement stmt = con.createStatement();
+		
+		ResultSet rs= stmt.executeQuery("select * from manager_data where mid = "+mid+" ");
+		
+		if(rs.next())
+			return rs.getString(6);
+		
+		return null;
+		
+	}
+	
 }

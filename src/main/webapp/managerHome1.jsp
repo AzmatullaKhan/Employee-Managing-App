@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/managerHome.css">
 </head>
 <body>
-    <div class="managerHome_container_one">
+    <div class='managerHome_container_one'>
         <div class="managerHome_container_one_nav">
             <a class="managerHome_container_one_nav_anchor" href="#dashboard">Dashboasrd</a>
             <a class="managerHome_container_one_nav_anchor" href="#allEmployeeOverview" onclick="handleOverViewClick()">Overview</a>
@@ -95,7 +95,7 @@
 
 
                         <label for="getSpecificEmployee_name" id="getSpecificEmployee_name_label" class="managerHome_container_three_five_two_label">Name</label>
-                        <input type="text" name="createEmployee_name" id="getSpecificEmployee_name" class="managerHome_container_three_five_two_input" placeholder="*** Name ***" onkeyup="checkGetSpecificEmployeeName()" required><br>
+                        <input type="text" name="getSpecificEmployee_name" id="getSpecificEmployee_name" class="managerHome_container_three_five_two_input" placeholder="*** Name ***" onkeyup="checkGetSpecificEmployeeName()" required><br>
 
                         <label for="" class="managerHome_container_three_four_two_label">Role</label>
                         <select name="getSpecificEmployee_role" class="managerHome_container_three_four_two_input" style="text-align: center;" aria-readonly="true">
@@ -118,7 +118,7 @@
             </section>
             <section class="managerHome_container_three_five" id="creatEemployee">
                 <div class="managerHome_container_three_five_one">
-                    <form class="managerHome_container_three_five_two" onsubmit="return validateCreateEmployee()">
+                    <form class="managerHome_container_three_five_two" action="es" method="post">
 
                         <label for="createEmployee_name" id="createEmployee_name_label" class="managerHome_container_three_five_two_label">Name</label>
                         <input type="text" name="createEmployee_name" id="createEmployee_name" class="managerHome_container_three_five_two_input" placeholder="*** Name ***" required onkeyup="checkCreateEmployeeName()"><br>

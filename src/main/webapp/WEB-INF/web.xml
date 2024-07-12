@@ -5,13 +5,37 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-  	<servlet-name>ManagerAdd</servlet-name>
-  	<display-name>ManagerAdd</display-name>
+  	<servlet-name>ManagerSignup</servlet-name>
+  	<display-name>ManagerSignup</display-name>
   	<description></description>
-  	<servlet-class>com.controller.ManagerAdd</servlet-class>
+  	<servlet-class>com.controller.ManagerSignup</servlet-class>
   </servlet>
+  
+  <servlet>
+  	<servlet-name>ManagerLogin</servlet-name>
+  	<display-name>ManagerLogin</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.ManagerLogin</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>EmployeeSignup</servlet-name>
+  	<display-name>EmployeeSignup</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.EmployeeSignup</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
-  	<servlet-name>ManagerAdd</servlet-name>
+  	<servlet-name>ManagerSignup</servlet-name>
   	<url-pattern>/ma</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>ManagerLogin</servlet-name>
+  	<url-pattern>/ml</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeSignup</servlet-name>
+  	<url-pattern>/es</url-pattern>
   </servlet-mapping>
 </web-app>

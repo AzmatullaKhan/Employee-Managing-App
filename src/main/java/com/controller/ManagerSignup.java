@@ -1,7 +1,7 @@
 package com.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.model.ManagerModel;
 import com.model.ManagerOperate;
 
-public class ManagerAdd extends HttpServlet {
+public class ManagerSignup extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public ManagerAdd() {
+    public ManagerSignup() {
         super();
     }
 
@@ -31,16 +31,15 @@ public class ManagerAdd extends HttpServlet {
 		mm.setMpassword(request.getParameter("manager_user_id_password"));
 		
 		response.setContentType("text/html");
-		PrintWriter pw= response.getWriter();
 		
 		ManagerOperate mo = new ManagerOperate();
 		
 		try {
 			mo.addManager(mm);
 		} catch (Exception e) {
-//			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerSignup.html");
+			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerSignup.html");
 		}
-//		response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerLogin.html");
+		response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerLogin.html");
 	}
 
 }

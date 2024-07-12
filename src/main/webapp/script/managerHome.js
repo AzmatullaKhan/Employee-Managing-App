@@ -3,7 +3,7 @@ function validateScheduleMeeting(){
     alert('Meeting has been successfully Scheduled. Reast Easy Now')
     document.getElementById('scheduleMeeting_group').value=""
     document.getElementById('scheduleMeeting_email_subject').value=""
-    window.location.href='/Employee-Managing-App/managerHome1.html#dashboard'
+    window.location.href='/Employee-Managing-App/ml#dashboard'
     return false
 }
 
@@ -31,18 +31,9 @@ function checkScheduleMeetingSubject(){
     }
 }
 
-function validateCreateEmployee(){
-    document.getElementById('createEmployee_name').value=""
-    document.getElementById('createEmployee_id').value=""
-    document.getElementById('createEmployee_group').value=""
-    window.location.href='/Employee-Managing-App/managerHome1.html'
-    return false
-}
-
 function checkCreateEmployeeName(){
     let manager=document.getElementById('createEmployee_name')
     let char=manager.value[manager.value.length-1]
-    console.log(char)
     if(!((char>='a' && char<='z') || (char>='A' && char<='Z') || char===' ' || !char)){
         document.getElementById('createEmployee_name_label').className='error_animation'
         setTimeout(()=>{
@@ -81,7 +72,7 @@ function validateGetSpecificEmployee(){
     document.getElementById('getSpecificEmployee_id').value=""
     document.getElementById('createEmployee_name').value=""
     document.getElementById('getSpecificEmployee_group').value=""
-    window.location.href='/Employee-Managing-App/managerHome1.html'
+    window.location.href='/Employee-Managing-App/ml'
     return false;
 }
 function checkGetSpecificEmployeeID(){

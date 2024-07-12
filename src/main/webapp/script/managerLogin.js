@@ -1,5 +1,5 @@
 function validateManagerLogin(){
-    window.location.href='/Employee-Managing-App/managerHome1.html'
+    window.location.href='/Employee-Managing-App/managerHome1.jsp'
     return false
 }
 function checkMangerID(){
