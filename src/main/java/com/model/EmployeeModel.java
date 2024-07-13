@@ -1,7 +1,15 @@
 package com.model;
 
 public class EmployeeModel {
-	String ename, eid, epassword, erole, egender, egroup;
+	String ename, eid, epassword, erole, egender, egroup, managerID;
+
+	public String getManagerID() {
+		return managerID;
+	}
+
+	public void setManagerID(String managerID) {
+		this.managerID = managerID;
+	}
 
 	public String getEname() {
 		return ename;

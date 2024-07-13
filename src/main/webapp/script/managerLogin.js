@@ -1,6 +1,5 @@
 function validateManagerLogin(){
-    window.location.href='/Employee-Managing-App/managerHome1.jsp'
-    return false
+    alert('Pressed')
 }
 function checkMangerID(){
     let manager=document.getElementById('manager_user_id')
@@ -12,4 +11,5 @@ function checkMangerID(){
         }, 1000)
         manager.value=manager.value.slice(0, manager.value.length-1)
     }
+	localStorage.setItem("managerId", manager.value)
 }

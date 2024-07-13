@@ -1,4 +1,3 @@
-jsp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,22 +12,22 @@ jsp
         <img class="employeeSignup_container_one_img" src="./images/signedUp.png" alt="image">
         <img class="employeeSignup_container_one_manager_img" src="./images/manager.jpg" alt="image">
         <form class="employeeSignup_container_two" action="ma" method="post" id="managerSignUpForm">
-            <label for="" class="managerSignup_container_two_label" id="manager_user_id_label">ID</label>
+            <label for="manager_user_id" class="managerSignup_container_two_label" id="manager_user_id_label">ID</label>
             <input type="text" name="manager_user_id" id="manager_user_id" class="managerSignup_container_two_input" placeholder="*** ID given by company ***" onkeyup="checkMangerID()" required><br>
 
-            <label for="" class="managerSignup_container_two_label" id="manager_user_name_label">Name</label>
+            <label for="manager_user_name" class="managerSignup_container_two_label" id="manager_user_name_label">Name</label>
             <input type="text" name="manager_user_name" id="manager_user_name" class="managerSignup_container_two_input" placeholder="*** Name ***" onkeyup="checkManagerName()" required><br>
 
-            <label for="" class="managerSignup_container_two_label" id="manager_user_companyname_label">Company Name</label>
+            <label for="manager_user_companyname" class="managerSignup_container_two_label" id="manager_user_companyname_label">Company Name</label>
             <input type="text" name="manager_user_companyname" id="manager_user_companyname" class="managerSignup_container_two_input" placeholder="*** Company Name ***" onkeyup="checkManagerCompany()" required><br>
 
-            <label for="" class="managerSignup_container_two_label">Role</label>
-            <input type="text" name="manager_user_role" class="managerSignup_container_two_input" value="Manager" style="text-align: center;" readonly><br>
+            <label for="manager_user_role" class="managerSignup_container_two_label">Role</label>
+            <input type="text" name="manager_user_role" id="manager_user_role" class="managerSignup_container_two_input" value="Manager" style="text-align: center;" readonly><br>
             
-            <label for="" class="managerSignup_container_two_label">Company Gmail</label>
-            <input type="email" name="manager_user_email_id" class="managerSignup_container_two_input" placeholder="*** Mail ID ***" required><br>
+            <label for="manager_user_email_id" class="managerSignup_container_two_label">Company Gmail</label>
+            <input type="email" name="manager_user_email_id" id="manager_user_email_id" class="managerSignup_container_two_input" placeholder="*** Mail ID ***" required><br>
             
-            <label for="" class="managerSignup_container_two_label">Password</label>
+            <label for="manager_user_id_password" class="managerSignup_container_two_label">Password</label>
             <input type="password" name="manager_user_id_password" id="manager_user_id_password" class="managerSignup_container_two_input" placeholder="*** password ***" minlength="8" onkeyup="provideAction()" required><br><br>
             <div class='employeeSignup_container_two_small_eye' onclick="handleEyeClick()">👁️<p id='employeeSignup_container_two_small_eye_cross' style="position: relative; top: -30px;left: 5px;font-size: 24px;opacity: 1;margin-top: 7px;">/</p></div>
             <p style="position: absolute;margin-top: 400px;width: 440px; color: red;">** Required one Special character, Capital letter and Alpha Numeric. Minimum length '8'**</p>

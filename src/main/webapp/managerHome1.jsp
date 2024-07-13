@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="java.io.PrintWriter"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,9 +9,9 @@
 </head>
 <body>
     <div class='managerHome_container_one'>
-        <div class="managerHome_container_one_nav">
+    	<div class="managerHome_container_one_nav">
             <a class="managerHome_container_one_nav_anchor" href="#dashboard">Dashboasrd</a>
-            <a class="managerHome_container_one_nav_anchor" href="#allEmployeeOverview" onclick="handleOverViewClick()">Overview</a>
+            <a class="managerHome_container_one_nav_anchor" href="#allEmployeeOverview">Overview</a>
             <a class="managerHome_container_one_nav_anchor" href="#scheduleMeeting">Schedule Meeting</a>
             <a class="managerHome_container_one_nav_anchor" href="#getSpecificEmployee">Edit Employee</a>
             <a class="managerHome_container_one_nav_anchor" href="#creatEemployee">Create Employee</a>
@@ -29,27 +30,8 @@
                         <span>Manaer</span>
                     </div>
                     <div class="managerHome_container_three_one_one_mini2">
-                        <div style="display: flex;">
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">
-                                <img src="./images/employeeMale.png" class="managerHome_container_three_one_one_mini2_eachEmployee_img"/>
-                                <div class="managerHome_container_three_one_one_mini2_eachEmployee_div">
-                                    <h3>Name</h3>     
-                                    <h3>Employee ID</h3>     
-                                    <h3>Working or Not</h3> 
-                                    <h3>Group Number</h3>
-                                    <h3>Role</h3>  
-                                </div>
-                            </div>
-                            <div class="managerHome_container_three_one_one_mini2_eachEmployee">
-                                <img src="./images/employeeFemale.png" class="managerHome_container_three_one_one_mini2_eachEmployee_img"/>
-                                <div class="managerHome_container_three_one_one_mini2_eachEmployee_div">
-                                    <h3>Name</h3>     
-                                    <h3>Employee ID</h3>     
-                                    <h3>Working or Not</h3> 
-                                    <h3>Group Number</h3>
-                                    <h3>Role</h3>  
-                                </div>
-                            </div>
+                        <div style="display: flex;" id="managerHome_container_three_one_one_mini2_details">                      
+                            
                         </div>
                     </div>
                 </div>
@@ -70,7 +52,7 @@
                 <div class="managerHome_container_three_three_one">
                     <form class="managerHome_container_three_three_two" onsubmit="return validateScheduleMeeting()">
                         <label for="scheduleMeeting_email_id" class="managerHome_container_three_three_two_label">Email</label>
-                        <input type="email" name="scheduleMeeting_email_id" class="managerHome_container_three_three_two_input" value="manager@gmail.com" readonly><br><br>
+                        <input type="email" id="scheduleMeeting_email_id" name="scheduleMeeting_email_id" class="managerHome_container_three_three_two_input" value="manager@gmail.com" readonly><br><br>
                     
                         <label for="scheduleMeeting_group" class="managerHome_container_three_three_two_label" id="scheduleMeeting_group_label">Group ID's</label>
                         <input type="text" name="scheduleMeeting_group" id="scheduleMeeting_group" class="managerHome_container_three_three_two_input" placeholder="*** Enter Group ID's seperated by ',' ***" required onkeyup="checkScheduleMeetingGroupID()"><br><br>
@@ -79,7 +61,7 @@
                         <input type="text" name="scheduleMeeting_email_subject" id="scheduleMeeting_email_subject" class="managerHome_container_three_three_two_input" placeholder="*** Subject ***" required onkeyup="checkScheduleMeetingSubject()"><br><br>
                     
                         <label for="scheduleMeeting_email_context" class="managerHome_container_three_three_two_label">Context</label>
-                        <textarea style="height: 100px;text-align: start;" type="text" name="scheduleMeeting_email_context" class="managerHome_container_three_three_two_input" placeholder="*** Context ***" ></textarea><br>
+                        <textarea style="height: 100px;text-align: start;" type="text" id="scheduleMeeting_email_context" name="scheduleMeeting_email_context" class="managerHome_container_three_three_two_input" placeholder="*** Context ***" ></textarea><br>
 
                         <button class="managerHome_container_three_three_two_button" type="submit">Schedule</button>
                     </form>
@@ -97,12 +79,12 @@
                         <label for="getSpecificEmployee_name" id="getSpecificEmployee_name_label" class="managerHome_container_three_five_two_label">Name</label>
                         <input type="text" name="getSpecificEmployee_name" id="getSpecificEmployee_name" class="managerHome_container_three_five_two_input" placeholder="*** Name ***" onkeyup="checkGetSpecificEmployeeName()" required><br>
 
-                        <label for="" class="managerHome_container_three_four_two_label">Role</label>
-                        <select name="getSpecificEmployee_role" class="managerHome_container_three_four_two_input" style="text-align: center;" aria-readonly="true">
-                            <option>Role 1</option>
-                            <option>Role 2</option>
-                            <option>Role 3</option>
-                            <option>Role 4</option>
+                        <label for="getSpecificEmployee_role" class="managerHome_container_three_four_two_label">Role</label>
+                        <select name="getSpecificEmployee_role" id="getSpecificEmployee_role" class="managerHome_container_three_four_two_input" style="text-align: center;" aria-readonly="true">
+                            <option>Role1</option>
+                            <option>Role2</option>
+                            <option>Role3</option>
+                            <option>Role4</option>
                         </select><br>
 
                         <label for="getSpecificEmployee_group" id="getSpecificEmployee_group_label" class="managerHome_container_three_four_two_label">Group</label>
@@ -118,7 +100,9 @@
             </section>
             <section class="managerHome_container_three_five" id="creatEemployee">
                 <div class="managerHome_container_three_five_one">
-                    <form class="managerHome_container_three_five_two" action="es" method="post">
+                    <form class="managerHome_container_three_five_two" action="es" method="post" onsubmit="validateCreatEemployee()">
+	
+						<input type='text' style="display: none;" name="managerHome_container_one_managerID" id='managerHome_container_one_managerID' readonly>
 
                         <label for="createEmployee_name" id="createEmployee_name_label" class="managerHome_container_three_five_two_label">Name</label>
                         <input type="text" name="createEmployee_name" id="createEmployee_name" class="managerHome_container_three_five_two_input" placeholder="*** Name ***" required onkeyup="checkCreateEmployeeName()"><br>
@@ -130,17 +114,17 @@
                         <input type="text" name="createEmployee_password" id="createEmployee_password" class="managerHome_container_three_five_two_input" readonly value="*** Password is auto generated, (Role@ID) ***"><br>
 
                         <label for="createEmployee_role" class="managerHome_container_three_five_two_label">Role</label>
-                        <select name="createEmployee_role" class="managerHome_container_three_five_two_input" style="text-align: center;" required>
-                            <option>Role 1</option>
-                            <option>Role 2</option>
-                            <option>Role 3</option>
-                            <option>Role 4</option>
+                        <select name="createEmployee_role" id="createEmployee_role" class="managerHome_container_three_five_two_input" style="text-align: center;" required>
+                            <option>Role1</option>
+                            <option>Role2</option>
+                            <option>Role3</option>
+                            <option>Role4</option>
                         </select><br>
 
-                        <label class="managerHome_container_three_five_two_label">Gender</label>
+                        <label for="createEmployee_role" class="managerHome_container_three_five_two_label">Gender</label>
                         <div>
-                            <input type="radio" id="createEmployee_maleRadio" name="gender" value="male" id="male" checked/> Male<br>
-                            <input type="radio" id="createEmployee_femaleRadio" name="gender" value="female" id="female"/> FeMale<br>
+                            <input type="radio" id="createEmployee_maleRadio" name="gender" value="male" checked/> Male<br>
+                            <input type="radio" id="createEmployee_femaleRadio" name="gender" value="female"/> FeMale<br>
                         </div><br>
 
                         <label for="createEmployee_group" id="createEmployee_group_label" class="managerHome_container_three_five_two_label">Group</label>

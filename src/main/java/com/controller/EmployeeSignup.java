@@ -28,16 +28,16 @@ public class EmployeeSignup extends HttpServlet {
 		em.setEpassword(em.getErole()+"@"+em.getEid());
 		em.setEgender(request.getParameter("gender"));
 		em.setEgroup(request.getParameter("createEmployee_group"));
-		
+		em.setManagerID(request.getParameter("managerHome_container_one_managerID"));
 		EmployeeOperator eo=new EmployeeOperator();
 		try {
 			eo.addEmployee(em);
 			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome1.jsp");
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Error");
+			System.out.print(em.getManagerID());
+			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome1.jsp");
 		}
-		response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome1.jsp#creatEemployee");
 	}
 
 }
