@@ -24,6 +24,12 @@
   	<description></description>
   	<servlet-class>com.controller.EmployeeSignup</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EmployeeTaskAdd</servlet-name>
+  	<display-name>EmployeeTaskAdd</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.EmployeeTaskAdd</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>ManagerSignup</servlet-name>
@@ -37,5 +43,9 @@
   <servlet-mapping>
   	<servlet-name>EmployeeSignup</servlet-name>
   	<url-pattern>/es</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeTaskAdd</servlet-name>
+  	<url-pattern>/eta</url-pattern>
   </servlet-mapping>
 </web-app>

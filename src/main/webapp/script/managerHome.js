@@ -1,17 +1,23 @@
 document.getElementById('managerHome_container_one_managerID').value=localStorage.getItem('managerId');
-
+document.getElementById('managerHome_container_three_sixmanagerID').value=localStorage.getItem('managerId');
 
 let employee_data=[];
 let parse_employee_data=[]
 
+let employee_task_data=[]
+let	parse_employee_task_data=[]
+
 parse_employee_data = JSON.parse(localStorage.getItem('employee_data'))
+console.log(parse_employee_data)
+
+parse_employee_task_data= JSON.parse(localStorage.getItem('employee_task_data'))
 console.log(parse_employee_data)
 	
 function validateScheduleMeeting(){
     alert('Meeting has been successfully Scheduled. Reast Easy Now')
     document.getElementById('scheduleMeeting_group').value=""
     document.getElementById('scheduleMeeting_email_subject').value=""
-    window.location.href='/Employee-Managing-App/ml#dashboard'
+    window.location.href='/Employee-Managing-App//managerHome1.jsp#dashboard'
     return false
 }
 
@@ -104,7 +110,7 @@ function validateGetSpecificEmployee(){
     document.getElementById('getSpecificEmployee_id').value=""
     document.getElementById('createEmployee_name').value=""
     document.getElementById('getSpecificEmployee_group').value=""
-    window.location.href='/Employee-Managing-App/ml'
+    window.location.href='/Employee-Managing-App//managerHome1.jsp'
     return false;
 }
 function checkGetSpecificEmployeeID(){
@@ -189,4 +195,67 @@ function appendEmployees(){
 }
 
 appendEmployees()
+
+
+
+function checkAddTaskEmployeeID(){
+    let manager=document.getElementById('addTask_id')
+    let char=manager.value[manager.value.length-1]
+    if(!((char>='a' && char<='z') || (char>='A' && char<='Z') || (char>='0' && char<='9') || char===' ' || !char)){
+        document.getElementById('addTask_id_label').className='error_animation'
+        setTimeout(()=>{
+            document.getElementById('addTask_id_label').className='managerHome_container_three_six_two_label'
+        }, 1000)
+        manager.value=manager.value.slice(0, manager.value.length-1)
+    }
+}
+function checkAddTaskDurationDay(){
+    let manager=document.getElementById('addTask_duration_days')
+    let char=manager.value[manager.value.length-1]
+    if(!((char>='0' && char<='9') || !char)){
+        document.getElementById('addTask_duration_days_label').className='error_animation'
+        setTimeout(()=>{
+            document.getElementById('addTask_duration_days_label').className='managerHome_container_three_four_two_label'
+        }, 1000)
+        manager.value=manager.value.slice(0, manager.value.length-1)
+    }
+}
+function checkAddTaskDurationHour(){
+    let manager=document.getElementById('addTask_duration_hours')
+    let char=manager.value[manager.value.length-1]
+    if(!((char>='0' && char<='9') || !char)){
+        document.getElementById('addTask_duration_hours_label').className='error_animation'
+        setTimeout(()=>{
+            document.getElementById('addTask_duration_hours_label').className='managerHome_container_three_four_two_label'
+        }, 1000)
+        manager.value=manager.value.slice(0, manager.value.length-1)
+    }
+}
+
+function validateAddTask(){
+	let manager_id=document.getElementById('managerHome_container_three_sixmanagerID').value
+	let eid=document.getElementById('addTask_id').value
+	let taskHead=document.getElementById('addTask_taskhead').value
+	let taskDesc=document.getElementById('addTask_desc').value
+	
+	let days=Number(document.getElementById('addTask_duration_days').value)
+	let hours=Number(document.getElementById('addTask_duration_hours').value)
+	
+	let taskCompletionTime=(days*24)+hours
+
+		
+	//employee_data=JSON.parse(localStorage.getItem('employee_data'))
+//	localStorage.removeItem('employee_data')
+	
+	employee_task_data.push({"mid":manager_id, "eid":eid, "taskHead":taskHead, "taskDescriptio":taskDesc, "completionTime":taskCompletionTime})
+	localStorage.setItem('employee_task_data', JSON.stringify(employee_task_data))
+}
+
+
+
+
+
+
+
+
 

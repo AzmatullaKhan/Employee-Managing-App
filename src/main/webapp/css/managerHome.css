@@ -294,7 +294,7 @@ br{
     height: 720px;
     background-size: cover;
     background-size: cover;
-    display: flex;
+    display: none;
     justify-content:flex-start;
     align-items: center;
     background-image: url('../images/managerGetUser.jpg');
@@ -440,10 +440,62 @@ br{
     background-size: cover;
     background-size: cover;
     display: flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items: center;
+    background-image: url('../images/managerGetUser.jpg');
+    background-size: cover;
 }
 
+.managerHome_container_three_six_two{
+    height:700px;
+    width: 500px;
+    margin-left: 150px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 4px lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.managerHome_container_three_six_two_label{
+    font-size: 20px;
+    font-variant: small-caps;
+    font-weight: bolder;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    color: #4949c6;
+}
+.managerHome_container_three_six_two_input{
+    height:30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    width:90%;
+}
+.managerHome_container_three_six_two_button{
+    height:50px;
+    width:130px;
+    align-self: center;
+    margin: 20px 0px;
+    background-color: transparent;
+    border-radius: 12px;
+    border:1px solid #4949c6;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    outline: none;
+}
+.managerHome_container_three_six_two_button:hover{
+    background-color: #3030e7;
+    border:none;
+    width: 140px;
+    font-size: 16px;
+    color: #fff;
+
+}
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
 
 .managerHome_container_three_seven{

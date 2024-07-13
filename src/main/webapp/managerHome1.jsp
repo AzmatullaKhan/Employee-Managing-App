@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<%@page import="java.io.PrintWriter"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,9 +12,9 @@
             <a class="managerHome_container_one_nav_anchor" href="#dashboard">Dashboasrd</a>
             <a class="managerHome_container_one_nav_anchor" href="#allEmployeeOverview">Overview</a>
             <a class="managerHome_container_one_nav_anchor" href="#scheduleMeeting">Schedule Meeting</a>
-            <a class="managerHome_container_one_nav_anchor" href="#getSpecificEmployee">Edit Employee</a>
+           <!--  <a class="managerHome_container_one_nav_anchor" href="#getSpecificEmployee">Edit Employee</a> -->
+           <a class="managerHome_container_one_nav_anchor" href="#addTask">Add Task</a>
             <a class="managerHome_container_one_nav_anchor" href="#creatEemployee">Create Employee</a>
-            <a class="managerHome_container_one_nav_anchor" href="#addTask">Add Task</a>
             <a class="managerHome_container_one_nav_anchor" href="#profile">Profile</a>
             <a class="managerHome_container_one_nav_anchor" href="loginType.html">Logout</a>
         </div>
@@ -61,13 +60,13 @@
                         <input type="text" name="scheduleMeeting_email_subject" id="scheduleMeeting_email_subject" class="managerHome_container_three_three_two_input" placeholder="*** Subject ***" required onkeyup="checkScheduleMeetingSubject()"><br><br>
                     
                         <label for="scheduleMeeting_email_context" class="managerHome_container_three_three_two_label">Context</label>
-                        <textarea style="height: 100px;text-align: start;" type="text" id="scheduleMeeting_email_context" name="scheduleMeeting_email_context" class="managerHome_container_three_three_two_input" placeholder="*** Context ***" ></textarea><br>
+                        <textarea style="height: 100px;text-align: start;" id="scheduleMeeting_email_context" name="scheduleMeeting_email_context" class="managerHome_container_three_three_two_input" placeholder="*** Context ***" ></textarea><br>
 
                         <button class="managerHome_container_three_three_two_button" type="submit">Schedule</button>
                     </form>
                 </div>
             </section>
-            <section class="managerHome_container_three_four" id="getSpecificEmployee">
+           <!--   <section class="managerHome_container_three_four" id="getSpecificEmployee">
                 <div class="managerHome_container_three_four_one">
                     <form class="managerHome_container_three_four_two" onsubmit="return validateGetSpecificEmployee()">
                         
@@ -95,6 +94,31 @@
                             <button class="managerHome_container_three_four_two_button" type="button">Delete</button>
                         </div>
 
+                    </form>
+                </div>
+            </section> -->
+            <section class="managerHome_container_three_six" id="addTask">
+                <div class="managerHome_container_three_six_one">
+                    <form class="managerHome_container_three_six_two" action="eta" method="post" onsubmit="validateAddTask()">
+						<input type='text' style="display: none;" name="managerHome_container_three_sixmanagerID" id='managerHome_container_three_sixmanagerID' readonly>
+
+                        <label for="addTask_id" id="addTask_id_label" class="managerHome_container_three_six_two_label">ID</label>
+                        <input type="text" name="addTask_id" id="addTask_id" class="managerHome_container_three_six_two_input" placeholder="*** Enter the employee ID ***" required onkeyup="checkAddTaskEmployeeID()"><br><br>
+                        
+                        <label for="addTask_taskhead" id="addTask_taskhead_label" class="managerHome_container_three_six_two_label">Task Head</label>
+                        <input type="text" name="addTask_taskhead" id="addTask_taskhead" class="managerHome_container_three_six_two_input" placeholder="*** Enter Task Heading(Backend, Frontend ...)***" required><br><br>
+                        
+                        <label for="addTask_desc" id="addTask_desc_label" class="managerHome_container_three_six_two_label">Task Description</label>
+                        <input type="text" name="addTask_desc" id="addTask_desc" class="managerHome_container_three_six_two_input" placeholder="*** Enter Task Description***" required><br><br>
+                        
+                        <label for="addTask_duration_days" id="addTask_duration_days_label" class="managerHome_container_three_six_two_label">Task Duration (Days)</label>
+                        <input type="text" name="addTask_duration_days" id="addTask_duration_days" class="managerHome_container_three_six_two_input" placeholder="*** Enter Number Days Allotted***" required onkeyup="checkAddTaskDurationDay()"><br><br>
+                        
+                        <label for="addTask_duration_hours" id="addTask_duration_hours_label" class="managerHome_container_three_six_two_label">Task Duration(Hours)</label>
+                        <input type="text" name="addTask_duration_hours" id="addTask_duration_hours" class="managerHome_container_three_six_two_input" placeholder="*** Enter Number Hours Allotted***" required onkeyup="checkAddTaskDurationHour()"><br><br>
+
+                        <button class="managerHome_container_three_six_two_button" type="submit">Assign</button>
+                        
                     </form>
                 </div>
             </section>
@@ -128,15 +152,10 @@
                         </div><br>
 
                         <label for="createEmployee_group" id="createEmployee_group_label" class="managerHome_container_three_five_two_label">Group</label>
-                        <input type="tezt" name="createEmployee_group" id="createEmployee_group" class="managerHome_container_three_five_two_input" placeholder="*** Assign Into a Group ***" required minlength="1" onkeyup="checkCreateEmployeeGroupID()"><br>
+                        <input type="text" name="createEmployee_group" id="createEmployee_group" class="managerHome_container_three_five_two_input" placeholder="*** Assign Into a Group ***" required onkeyup="checkCreateEmployeeGroupID()"><br>
 
                         <button class="managerHome_container_three_five_two_button" type="submit">Create</button>
                     </form>
-                </div>
-            </section>
-            <section class="managerHome_container_three_six" id="addTask">
-                <div class="managerHome_container_three_six_one">
-                    Add Task
                 </div>
             </section>
             <section class="managerHome_container_three_seven" id="profile">
