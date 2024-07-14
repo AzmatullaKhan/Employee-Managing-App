@@ -7,6 +7,8 @@ let parse_employee_data=[]
 let employee_task_data=[]
 let	parse_employee_task_data=[]
 
+let parse_manager_data=[]
+
 if(localStorage.getItem('employee_data')){
 	parse_employee_data = JSON.parse(localStorage.getItem('employee_data'))
 	console.log(parse_employee_data)
@@ -263,9 +265,20 @@ function validateAddTask(){
 
 
 
+if(localStorage.getItem('manager_data')){
+    parse_manager_data=JSON.parse(localStorage.getItem('manager_data'))
 
+    parse_manager_data.forEach(element => {
+        if(element.mid===localStorage.getItem('managerId')){
+            document.getElementById('profile_name').value=element.mname
+            document.getElementById('profile_id').value=element.mid
+            document.getElementById('profile_company_name').value=element.mcompanyname
+            document.getElementById('profile_role').value=element.mrole
+            document.getElementById('profile_mail').value=element.memail
+            document.getElementById('profile_password').value=element.mpassword
 
-
-
-
-
+			document.getElementById('scheduleMeeting_email_id').value=element.memail
+        }
+    });
+}
+// [{"mid":"2200031618","mname":"Azmatulla Khan","mcompanyname":"KL University","morle":"Manager","memail":"2200031618@kluniversity.in","mpassword":"MalikMD@123"}]

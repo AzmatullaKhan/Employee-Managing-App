@@ -11,7 +11,7 @@
     <div class="employeeSignup_container_one">
         <img class="employeeSignup_container_one_img" src="./images/signedUp.png" alt="image">
         <img class="employeeSignup_container_one_manager_img" src="./images/manager.jpg" alt="image">
-        <form class="employeeSignup_container_two" action="ma" method="post" id="managerSignUpForm">
+        <form class="employeeSignup_container_two" action="ma" method="post" id="managerSignUpForm" onsubmit="validateManagerSignup(    )">
             <label for="manager_user_id" class="managerSignup_container_two_label" id="manager_user_id_label">ID</label>
             <input type="text" name="manager_user_id" id="manager_user_id" class="managerSignup_container_two_input" placeholder="*** ID given by company ***" onkeyup="checkMangerID()" required><br>
 

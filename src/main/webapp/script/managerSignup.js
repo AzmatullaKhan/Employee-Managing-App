@@ -1,3 +1,10 @@
+let manager_data=[]
+let parse_manager_data;
+if(localStorage.getItem('manager_data')){
+    parse_manager_data=localStorage.getItem('manager_data')
+    console.log(parse_manager_data)
+}
+
 function validatePassword(pass){
     let cap=Number(0);
     let sp=Number(0);
@@ -70,4 +77,21 @@ function handleEyeClick(){
         document.getElementById('manager_user_id_password').type='password'
         document.getElementById('employeeSignup_container_two_small_eye_cross').style.opacity=1
     }
+}
+
+
+
+function validateManagerSignup(){
+    let mid = document.getElementById('manager_user_id').value;
+    let mname = document.getElementById('manager_user_name').value;
+    let mcompanyname = document.getElementById('manager_user_companyname').value;
+    let mrole = document.getElementById('manager_user_role').value;
+    let memail = document.getElementById('manager_user_email_id').value;
+    let mpassword = document.getElementById('manager_user_id_password').value;
+
+    if(localStorage.getItem('manager_data'))
+        manager_data=JSON.parse(localStorage.getItem('manager_data'))
+
+    manager_data.push({"mid":mid, "mname":mname, "mcompanyname":mcompanyname, "mrole":mrole, "memail":memail, "mpassword":mpassword})
+    localStorage.setItem('manager_data', JSON.stringify(manager_data))
 }
