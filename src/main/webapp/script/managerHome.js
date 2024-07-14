@@ -7,11 +7,15 @@ let parse_employee_data=[]
 let employee_task_data=[]
 let	parse_employee_task_data=[]
 
-parse_employee_data = JSON.parse(localStorage.getItem('employee_data'))
-console.log(parse_employee_data)
+if(localStorage.getItem('employee_data')){
+	parse_employee_data = JSON.parse(localStorage.getItem('employee_data'))
+	console.log(parse_employee_data)
+}
 
-parse_employee_task_data= JSON.parse(localStorage.getItem('employee_task_data'))
-console.log(parse_employee_data)
+if(localStorage.getItem('employee_task_data')){
+	parse_employee_task_data= JSON.parse(localStorage.getItem('employee_task_data'))
+	console.log(parse_employee_data)
+}
 	
 function validateScheduleMeeting(){
     alert('Meeting has been successfully Scheduled. Reast Easy Now')
@@ -62,7 +66,8 @@ function validateCreatEemployee(){
 		
 	let egroup=document.getElementById('createEmployee_group').value
 		
-	employee_data=JSON.parse(localStorage.getItem('employee_data'))
+	if(localStorage.getItem('employee_data'))
+		employee_data=JSON.parse(localStorage.getItem('employee_data'))
 //	localStorage.removeItem('employee_data')
 	
 	employee_data.push({"mid":manager_id,"ename":ename, "eid":eid, "erole":erole, "epassword":epassword, "egender":egender, "egroup":egroup})
@@ -149,7 +154,8 @@ function checkGetSpecificEmployeeGroupID(){
 
 
 function appendEmployees(){
-	parse_employee_data.forEach(element => {
+	if(parse_employee_data){
+		parse_employee_data.forEach(element => {
             if(element.mid === document.getElementById('managerHome_container_one_managerID').value){
 				
 				let main_div= document.createElement('div')
@@ -192,6 +198,7 @@ function appendEmployees(){
 	
 			}
         });
+	}
 }
 
 appendEmployees()
@@ -246,6 +253,9 @@ function validateAddTask(){
 		
 	//employee_data=JSON.parse(localStorage.getItem('employee_data'))
 //	localStorage.removeItem('employee_data')
+
+	//if(localStorage.getItem('employee_task_data'))
+		//employee_task_data=JSON.parse(localStorage.getItem('employee_task_data'))
 	
 	employee_task_data.push({"mid":manager_id, "eid":eid, "taskHead":taskHead, "taskDescriptio":taskDesc, "completionTime":taskCompletionTime})
 	localStorage.setItem('employee_task_data', JSON.stringify(employee_task_data))

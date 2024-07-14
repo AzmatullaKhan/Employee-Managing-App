@@ -159,7 +159,28 @@
             </section>
             <section class="managerHome_container_three_seven" id="profile">
                 <div class="managerHome_container_three_seven_one">
-                    Manager Profile
+                    <div class="managerHome_container_three_seven_two">
+
+                        <label for="profile_name" id="profile_name_label" class="managerHome_container_three_seven_two_label">Name</label>
+                        <input type="text" name="profile_name" id="profile_name" class="managerHome_container_three_seven_two_input" readonly><br>
+
+                        <label for="profile_id" id="profile_id_label" class="managerHome_container_three_seven_two_label">ID</label>
+                        <input type="text" name="profile_id" id="profile_id" class="managerHome_container_three_seven_two_input" readonly><br>
+
+                        <label for="profile_company_name" id="profile_company_name_label" class="managerHome_container_three_seven_two_label">Company Name</label>
+                        <input type="text" name="profile_company_name" id="profile_company_name" class="managerHome_container_three_seven_two_input" readonly><br>
+
+                        <label for="profile_role" id="profile_role_label" class="managerHome_container_three_seven_two_label">Role</label>
+                        <input type="text" name="profile_role" id="profile_role" class="managerHome_container_three_seven_two_input" readonly><br>
+
+                        <label for="profile_mail" id="profile_mail_label" class="managerHome_container_three_seven_two_label">Comapny Mail</label>
+                        <input type="text" name="profile_mail" id="profile_mail" class="managerHome_container_three_seven_two_input" readonly><br>
+
+                        <label for="profile_password" id="profile_password_label" class="managerHome_container_three_seven_two_label">Password</label>
+                        <input type="text" name="profile_password" id="profile_password" class="managerHome_container_three_seven_two_input" readonly><br>
+
+
+                    </div>
                 </div>
             </section>
         </div>

@@ -449,7 +449,7 @@ br{
     display: flex;
     justify-content:flex-start;
     align-items: center;
-    background-image: url('../images/managerGetUser.jpg');
+    background-image: url('../images/managerAddTask.jpg');
     background-size: cover;
 }
 
@@ -521,8 +521,38 @@ br{
     background-size: cover;
     background-size: cover;
     display: flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items: center;
+    background-image: url('../images/managerProfile.jpg');
 }
-
+.managerHome_container_three_seven_two{
+    height:700px;
+    width: 500px;
+    margin-left: 100px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 4px lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.managerHome_container_three_seven_two_label{
+    font-size: 20px;
+    font-variant: small-caps;
+    font-weight: bolder;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    color: #4949c6;
+}
+.managerHome_container_three_seven_two_input{
+    height:30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    width:60%;
+}
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
