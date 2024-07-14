@@ -141,9 +141,16 @@ br{
     overflow-y: scroll;
     animation: managerHome_container_three_one_one_mini1-animation 1.2s ease-in-out 0s;
 }
+.managerHome_container_three_one_one_mini2_detailHolder{
+	display: ruby;
+	min-width:1000px;
+	max-width:1000px;
+}
 .managerHome_container_three_one_one_mini2_eachEmployee{
-    height:200px;
-    width:325px;
+    min-height:200px;
+    min-width:325px;
+    max-height:200px;
+    max-width:325px;
     border-radius: 12px;
     display: flex;
     justify-content: flex-start;

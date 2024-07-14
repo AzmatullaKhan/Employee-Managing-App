@@ -138,6 +138,39 @@
         border: 1px solid;
         border-radius: 12px;
         margin:10px 0px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .employee_container_311_tasksNotDone_task_span{
+        margin: 0px 5px;
+    }
+    .employee_container_311_tasksNotDone_task_desc{
+        margin: 0px 5px;
+        width:250px;
+    }
+    .employee_container_311_tasksNotDone_task_button{
+        height:50px;
+        width:50px;
+        align-self: center;
+        margin: 20px 0px;
+        background-color: transparent;
+        border-radius: 12px;
+        border:2px solid #196b94;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        margin: 0px 20px;
+        color: #000;
+        transition: all 0.4s ease;
+    }
+    .employee_container_311_tasksNotDone_task_button:hover{
+        background-color: #c4fff2;
+        border:none;
+        height: 55px;
+        font-size: 16px;
     }
     .employee_container_311_tasksDone{
         height:650px;
@@ -148,12 +181,18 @@
         padding: 20px;
         animation: employee_container_311_tasksNotDone-animation 1.4s ease-in-out 0s;
     }
+    .employee_container_311_tasksDone_task_span{
+        margin:0px 10px;
+    }
     .employee_container_311_tasksDone_task{
         height:80px;
         width:100%;
         border: 1px solid;
         border-radius: 12px;
         margin:10px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     /* -------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -223,6 +262,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         margin: 0px 150px 0px 0px;
     }
     .employeeHome_container_one_nav_anchor:nth-child(3):hover{
@@ -230,5 +270,24 @@
         border:none;
         width: 130px;
         font-size: 16px;
+    }
+    .employee_container_331_one_label{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: bolder;
+        margin: 10px 0px 10px 0px;
+        text-align: center;
+        color: #4949c6;
+    }
+    .employee_container_311_one_input{
+        height:30px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid;
+        outline: none;
+        background-color: transparent;
+        text-align: center;
+        width:70%;
     }
     /* -------------------------------------------------------------------------------------------------------------------------------------- */

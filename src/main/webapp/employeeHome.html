@@ -16,16 +16,16 @@
         <div class="employee_container_three">
             <section  class="employee_container_three_one" id="dashboard">
                 <div class="employee_container_three_one_one">
-                    <div class="employee_container_311_tasksNotDone">
+                    <div class="employee_container_311_tasksNotDone" id="employee_container_311_tasksNotDone_container">
                         <h1 style="font-variant: small-caps;text-decoration:underline;">Tasks Assigned</h1>
-                        <div class="employee_container_311_tasksNotDone_task"></div>
-                        <div class="employee_container_311_tasksNotDone_task"></div>
-                        <div class="employee_container_311_tasksNotDone_task"></div>
-                        <div class="employee_container_311_tasksNotDone_task"></div>
                     </div>
                     <div class="employee_container_311_tasksDone">
                         <h1 style="font-variant: small-caps;text-decoration:underline;">Tasks completed today</h1>
-                        <div class="employee_container_311_tasksDone_task"></div>
+                        <div class="employee_container_311_tasksDone_task">
+                            <span class="employee_container_311_tasksDone_task_span">Sno.</span>
+                            <h3>Task Head</h3>
+                            <span class="employee_container_311_tasksDone_task_span">-Assigned By</span>
+                        </div> 
                     </div>
                 </div>
             </section>
@@ -45,13 +45,33 @@
             </section>
             <section class="employee_container_three_three" id="profile">
                 <div class="employee_container_three_three_one">
-                    <div class="employee_container_331_one">
-                        <h1 style="font-variant: small-caps;text-decoration:underline;">User Details</h1>
+                    <div class="employee_container_331_one" id="">
+                        <h1 style="font-variant: small-caps;">Your Details</h1>
+
+                        <label class="employee_container_331_one_label">Name</label>
+                        <input type="text" class="employee_container_311_one_input" readonly id="employee_container_311_one_input_name"><br>
+
+                        <label class="employee_container_331_one_label">Employee ID</label>
+                        <input type="text" class="employee_container_311_one_input" readonly id="employee_container_311_one_input_eid"><br>
+
+                        <label class="employee_container_331_one_label">Password</label>
+                        <input type="text" class="employee_container_311_one_input" readonly id="employee_container_311_one_input_password"><br>
+
+                        <label class="employee_container_331_one_label">In Group</label>
+                        <input type="text" class="employee_container_311_one_input" readonly id="employee_container_311_one_input_group"><br>
+
+                        <label class="employee_container_331_one_label">Role</label>
+                        <input type="text" class="employee_container_311_one_input" readonly id="employee_container_311_one_input_role">
+
+                        <label class="employee_container_331_one_label">Gender</label>
+                        <input type="text" class="employee_container_311_one_input" readonly id="employee_container_311_one_input_gender"><br>
+
                     </div>
                 </div>
             </section>
         </div>
         <a class="employeeHome_container_one_anchor_back" href="loginType.html"><span style="font-size: 30px;margin-right: 3px;">←</span>Logout</a>
     </div>
+    <script src="./script/employeeHome.js"></script>
 </body>
 </html>

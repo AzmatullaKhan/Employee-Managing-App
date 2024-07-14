@@ -29,8 +29,7 @@
                         <span>Manaer</span>
                     </div>
                     <div class="managerHome_container_three_one_one_mini2">
-                        <div style="display: flex;" id="managerHome_container_three_one_one_mini2_details">                      
-                            
+                        <div class="managerHome_container_three_one_one_mini2_detailHolder" id="managerHome_container_three_one_one_mini2_details">                  
                         </div>
                     </div>
                 </div>
