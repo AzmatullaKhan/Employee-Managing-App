@@ -4,7 +4,7 @@ let employee_task_data=JSON.parse(localStorage.getItem('employee_task_data'))
 
 let count=Number(1);
 employee_task_data.forEach(element => {
-    if(element.eid===employee_id && element.tasskComplete==='notComplete'){
+    if(element.eid===employee_id && element.taskStatus==='notComplete'){
         let main_div=document.createElement('div')
         main_div.className='employee_container_311_tasksNotDone_task'
 
@@ -28,7 +28,7 @@ employee_task_data.forEach(element => {
         let button = document.createElement('button')
         button.className='employee_container_311_tasksNotDone_task_button'
         button.textContent='Done?'
-        button.addEventListener('click',()=>{
+		button.addEventListener('click',()=>{
 
             for (let index = 0; index < employee_task_data.length; index++) {
                 const element = employee_task_data[index];
