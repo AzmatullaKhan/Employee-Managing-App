@@ -102,7 +102,7 @@
 						<input type='text' style="display: none;" name="managerHome_container_three_sixmanagerID" id='managerHome_container_three_sixmanagerID' readonly>
 
                         <label for="addTask_id" id="addTask_id_label" class="managerHome_container_three_six_two_label">ID</label>
-                        <input type="text" name="addTask_id" id="addTask_id" class="managerHome_container_three_six_two_input" placeholder="*** Enter the employee ID ***" required onkeyup="checkAddTaskEmployeeID()"><br><br>
+                        <input type="text" name="addTask_id" id="addTask_id" class="managerHome_container_three_six_two_input" placeholder="*** Enter the employee ID ***" required onkeyup="checkAddTaskEmployeeID()" onchange="changeDetectedFromAddTask()"><br><br>
                         
                         <label for="addTask_taskhead" id="addTask_taskhead_label" class="managerHome_container_three_six_two_label">Task Head</label>
                         <input type="text" name="addTask_taskhead" id="addTask_taskhead" class="managerHome_container_three_six_two_input" placeholder="*** Enter Task Heading(Backend, Frontend ...)***" required><br><br>

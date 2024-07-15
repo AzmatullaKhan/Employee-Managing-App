@@ -98,6 +98,15 @@ function checkCreateEmployeeID(){
         }, 1000)
         manager.value=manager.value.slice(0, manager.value.length-1)
     }
+
+    let checker_employee=JSON.parse(localStorage.getItem('employee_data'))
+    for (let index = 0; index < checker_employee.length; index++) {
+        const element = checker_employee[index];
+        if(element.eid === manager.value){
+            alert('A employee with same Employee ID already exists.Submitting with same EID results in not adding the employee.')
+            break;
+        }
+    }
 }
 
 function checkCreateEmployeeGroupID(){
@@ -218,6 +227,33 @@ function checkAddTaskEmployeeID(){
         manager.value=manager.value.slice(0, manager.value.length-1)
     }
 }
+
+function changeDetectedFromAddTask(){
+    let manager=document.getElementById('addTask_id')
+    let checker_employee=JSON.parse(localStorage.getItem('employee_data'))
+    let is_presenet=false
+    for (let index = 0; index < checker_employee.length; index++) {
+        const element = checker_employee[index];
+        if(element.eid === manager.value){
+            is_presenet=true
+            break;
+        }
+    }
+    if(is_presenet===false){
+        manager.value=""
+        alert("Then mentioned ID isn't any of your Employee. Please provide a Employee ID from your company.")
+    }
+
+    let checker_addtask= JSON.parse(localStorage.getItem('employee_task_data'))
+    for (let index = 0; index < checker_addtask.length; index++) {
+        const element = checker_addtask[index];
+        if(element.eid===manager.value){
+            alert("The mentioned Employee is already working on a task of "+ element.completionTime+" hrs.Still want to assign, please provide the below details")
+            break;
+        }
+    }
+}
+
 function checkAddTaskDurationDay(){
     let manager=document.getElementById('addTask_duration_days')
     let char=manager.value[manager.value.length-1]
