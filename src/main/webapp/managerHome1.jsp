@@ -131,7 +131,7 @@
                         <input type="text" name="createEmployee_name" id="createEmployee_name" class="managerHome_container_three_five_two_input" placeholder="*** Name ***" required onkeyup="checkCreateEmployeeName()"><br>
 
                         <label for="createEmployee_id" id="createEmployee_id_label" class="managerHome_container_three_five_two_label">ID</label>
-                        <input type="text" name="createEmployee_id" id="createEmployee_id" class="managerHome_container_three_five_two_input" placeholder="*** ID given by company ***" required onkeyup="checkCreateEmployeeID()"><br>
+                        <input type="text" name="createEmployee_id" id="createEmployee_id" class="managerHome_container_three_five_two_input" placeholder="*** ID given by company ***" required onkeyup="checkCreateEmployeeID()" onchange="changeDetectedCreateEmployee()"><br>
 
                         <label for="createEmployee_password" id="createEmployee_password_label" class="managerHome_container_three_five_two_label">Password</label>
                         <input type="text" name="createEmployee_password" id="createEmployee_password" class="managerHome_container_three_five_two_input" readonly value="*** Password is auto generated, (Role@ID) ***"><br>

@@ -4,7 +4,7 @@ let employee_task_data=JSON.parse(localStorage.getItem('employee_task_data'))
 
 let count=Number(1);
 employee_task_data.forEach(element => {
-    if(element.eid===employee_id){
+    if(element.eid===employee_id && element.tasskComplete==='notComplete'){
         let main_div=document.createElement('div')
         main_div.className='employee_container_311_tasksNotDone_task'
 
@@ -28,6 +28,37 @@ employee_task_data.forEach(element => {
         let button = document.createElement('button')
         button.className='employee_container_311_tasksNotDone_task_button'
         button.textContent='Done?'
+        button.addEventListener('click',()=>{
+
+            for (let index = 0; index < employee_task_data.length; index++) {
+                const element = employee_task_data[index];
+                if(element.eid === employee_id && element.taskStatus === 'notComplete'){
+                    element.taskStatus = "complete"
+                    break;
+                }
+            }
+            localStorage.setItem('employee_task_data', JSON.stringify(employee_task_data))
+
+            let isThereTask=false
+            for (let index = 0; index < employee_task_data.length; index++) {
+                const element = employee_task_data[index];
+                if(element.eid === employee_id && element.taskStatus === 'notComplete'){
+                    isThereTask=true
+                    break;
+                }
+            }
+            if(!isThereTask){
+                let done_data=JSON.parse(localStorage.getItem('employee_data'))
+                for (let index = 0; index < done_data.length; index++) {
+                    const element = done_data[index];
+                    if(element.eid===employee_id){
+                        element.estatus="Free"
+                        break;
+                    }
+                }
+                localStorage.setItem('employee_data', JSON.stringify(done_data))
+            }
+        })
 
         main_div.appendChild(span1)
         main_div.appendChild(head1)
@@ -38,6 +69,40 @@ employee_task_data.forEach(element => {
         document.getElementById('employee_container_311_tasksNotDone_container').appendChild(main_div)
     }
 });
+
+
+count=Number(1)
+employee_task_data.forEach(element => {
+    if(element.eid===employee_id && element.taskStatus==='complete'){
+        let main_div=document.createElement('div')
+        main_div.className='employee_container_311_tasksDone_task'
+
+        let span1=document.createElement('span')
+        span1.className='employee_container_311_tasksDone_task_span'
+        span1.textContent=count
+
+        count=count+1
+
+        let head1=document.createElement('h3')
+        head1.textContent=element.taskHead
+
+        let span2=document.createElement('span')
+        span2.className='employee_container_311_tasksDone_task_span'
+        span2.textContent=element.mid+" - Assigner"
+
+        main_div.appendChild(span1)
+        main_div.appendChild(head1)
+        main_div.appendChild(span2)
+
+        document.getElementById('employee_container_311_tasksDone_container').appendChild(main_div)
+    }
+});
+
+{/* <div class="employee_container_311_tasksDone_task">
+    <span class="employee_container_311_tasksDone_task_span">Sno.</span>
+    <h3>Task Head</h3>
+    <span class="employee_container_311_tasksDone_task_span">-Assigned By</span>
+</div> */}
 
 
 let employee_data= JSON.parse(localStorage.getItem('employee_data'))

@@ -72,7 +72,7 @@ function validateCreatEemployee(){
 		employee_data=JSON.parse(localStorage.getItem('employee_data'))
 //	localStorage.removeItem('employee_data')
 	
-	employee_data.push({"mid":manager_id,"ename":ename, "eid":eid, "erole":erole, "epassword":epassword, "egender":egender, "egroup":egroup})
+	employee_data.push({"mid":manager_id,"ename":ename, "eid":eid, "erole":erole, "epassword":epassword, "egender":egender, "egroup":egroup, "estatus":"Free"})
 	localStorage.setItem('employee_data', JSON.stringify(employee_data))
 }
 
@@ -98,11 +98,15 @@ function checkCreateEmployeeID(){
         }, 1000)
         manager.value=manager.value.slice(0, manager.value.length-1)
     }
+}
 
+function changeDetectedCreateEmployee(){
+    let manager=document.getElementById('createEmployee_id')
     let checker_employee=JSON.parse(localStorage.getItem('employee_data'))
     for (let index = 0; index < checker_employee.length; index++) {
         const element = checker_employee[index];
         if(element.eid === manager.value){
+            manager.value=""
             alert('A employee with same Employee ID already exists.Submitting with same EID results in not adding the employee.')
             break;
         }
@@ -191,7 +195,7 @@ function appendEmployees(){
 				
 				name.innerText=element.ename
 				employeeID.innerText=element.eid
-				status.innerText='No'
+				status.innerText=element.estatus
 				groupNummber.innerText=element.egroup
 				role.innerText=element.erole
 				
@@ -247,7 +251,7 @@ function changeDetectedFromAddTask(){
     let checker_addtask= JSON.parse(localStorage.getItem('employee_task_data'))
     for (let index = 0; index < checker_addtask.length; index++) {
         const element = checker_addtask[index];
-        if(element.eid===manager.value){
+        if(element.eid===manager.value && element.taskStatus==='notComplete'){
             alert("The mentioned Employee is already working on a task of "+ element.completionTime+" hrs.Still want to assign, please provide the below details")
             break;
         }
@@ -294,8 +298,17 @@ function validateAddTask(){
 
 	//if(localStorage.getItem('employee_task_data'))
 		//employee_task_data=JSON.parse(localStorage.getItem('employee_task_data'))
+    let changing_status = JSON.parse(localStorage.getItem('employee_data'))
+    for (let index = 0; index < changing_status.length; index++) {
+        const element = changing_status[index];
+        if(element.eid === eid){
+            element.estatus="Assigned"
+            break;
+        }        
+    }   
+    localStorage.setItem('employee_data', JSON.stringify(changing_status))
 	
-	employee_task_data.push({"mid":manager_id, "eid":eid, "taskHead":taskHead, "taskDescriptio":taskDesc, "completionTime":taskCompletionTime})
+	employee_task_data.push({"mid":manager_id, "eid":eid, "taskHead":taskHead, "taskDescriptio":taskDesc, "completionTime":taskCompletionTime, "taskStatus":"notComplete"})
 	localStorage.setItem('employee_task_data', JSON.stringify(employee_task_data))
 }
 
