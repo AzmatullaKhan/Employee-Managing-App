@@ -26,7 +26,7 @@ public class ManagerLogin extends HttpServlet {
 		try {
 			String passSaved = mo.getPasswordManager(mid);
 			if(pass.equals(passSaved)) {
-				response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome1.jsp");
+				response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome.jsp");
 				PrintWriter pw= response.getWriter();
 				pw.print("<h1 id='fromSomewhere'>"+mid+"</h1>");
 			}
