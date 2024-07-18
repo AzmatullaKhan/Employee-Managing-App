@@ -22,7 +22,6 @@ if(localStorage.getItem('employee_task_data')){
 function validateScheduleMeeting(){
     alert('Meeting has been successfully Scheduled. Reast Easy Now')
     document.getElementById('scheduleMeeting_group').value=""
-    document.getElementById('scheduleMeeting_email_subject').value=""
     window.location.href='/Employee-Managing-App//managerHome1.jsp#dashboard'
     return false
 }
@@ -102,15 +101,17 @@ function checkCreateEmployeeID(){
 
 function changeDetectedCreateEmployee(){
     let manager=document.getElementById('createEmployee_id')
-    let checker_employee=JSON.parse(localStorage.getItem('employee_data'))
-    for (let index = 0; index < checker_employee.length; index++) {
-        const element = checker_employee[index];
-        if(element.eid === manager.value){
-            manager.value=""
-            alert('A employee with same Employee ID already exists.Submitting with same EID results in not adding the employee.')
-            break;
-        }
-    }
+    if(localStorage.getItem('employee_data')){
+		let checker_employee=JSON.parse(localStorage.getItem('employee_data'))
+	    for (let index = 0; index < checker_employee.length; index++) {
+	        const element = checker_employee[index];
+	        if(element.eid === manager.value){
+	            manager.value=""
+	            alert('A employee with same Employee ID already exists.Submitting with same EID results in not adding the employee.')
+	            break;
+	        }
+	    }
+}
 }
 
 function checkCreateEmployeeGroupID(){
@@ -236,26 +237,30 @@ function changeDetectedFromAddTask(){
     let manager=document.getElementById('addTask_id')
     let checker_employee=JSON.parse(localStorage.getItem('employee_data'))
     let is_presenet=false
-    for (let index = 0; index < checker_employee.length; index++) {
-        const element = checker_employee[index];
-        if(element.eid === manager.value){
-            is_presenet=true
-            break;
-        }
-    }
+    if(localStorage.getItem('employee_data')){
+		for (let index = 0; index < checker_employee.length; index++) {
+	        const element = checker_employee[index];
+	        if(element.eid === manager.value){
+	            is_presenet=true
+	            break;
+	        }
+	    }
+	}
     if(is_presenet===false){
         manager.value=""
         alert("Then mentioned ID isn't any of your Employee. Please provide a Employee ID from your company.")
     }
 
-    let checker_addtask= JSON.parse(localStorage.getItem('employee_task_data'))
-    for (let index = 0; index < checker_addtask.length; index++) {
-        const element = checker_addtask[index];
-        if(element.eid===manager.value && element.taskStatus==='notComplete'){
-            alert("The mentioned Employee is already working on a task of "+ element.completionTime+" hrs.Still want to assign, please provide the below details")
-            break;
-        }
-    }
+    if(localStorage.getItem('employee_task_data')){
+		let checker_addtask= JSON.parse(localStorage.getItem('employee_task_data'))
+	    for (let index = 0; index < checker_addtask.length; index++) {
+	        const element = checker_addtask[index];
+	        if(element.eid===manager.value && element.taskStatus==='notComplete'){
+	            alert("The mentioned Employee is already working on a task of "+ element.completionTime+" hrs.Still want to assign, please provide the below details")
+	            break;
+	        }
+	    }
+	}
 }
 
 function checkAddTaskDurationDay(){
@@ -296,8 +301,9 @@ function validateAddTask(){
 	//employee_data=JSON.parse(localStorage.getItem('employee_data'))
 //	localStorage.removeItem('employee_data')
 
-	//if(localStorage.getItem('employee_task_data'))
-		//employee_task_data=JSON.parse(localStorage.getItem('employee_task_data'))
+	if(localStorage.getItem('employee_task_data'))
+		employee_task_data=JSON.parse(localStorage.getItem('employee_task_data'))
+    
     let changing_status = JSON.parse(localStorage.getItem('employee_data'))
     for (let index = 0; index < changing_status.length; index++) {
         const element = changing_status[index];
@@ -326,7 +332,9 @@ if(localStorage.getItem('manager_data')){
             document.getElementById('profile_mail').value=element.memail
             document.getElementById('profile_password').value=element.mpassword
 
-			document.getElementById('scheduleMeeting_email_id').value=element.memail
+			setTimeout(()=>{
+				document.getElementById('scheduleMeeting_email_id').value=element.memail
+			},10)
         }
     });
 }

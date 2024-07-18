@@ -32,11 +32,11 @@ public class EmployeeSignup extends HttpServlet {
 		EmployeeOperator eo=new EmployeeOperator();
 		try {
 			eo.addEmployee(em);
-			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome1.jsp");
+			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome.jsp");
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.print(em.getManagerID());
-			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome1.jsp");
+			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome.jsp");
 		}
 	}
 
