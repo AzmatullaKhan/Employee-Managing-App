@@ -176,6 +176,29 @@ function appendEmployees(){
 				
 				let main_div= document.createElement('div')
 				main_div.className='managerHome_container_three_one_one_mini2_eachEmployee'
+                main_div.addEventListener('click', ()=>{
+                    document.getElementById('popup_container').className="visible_popup_container"
+                    document.getElementById('managerHome_container_one').style.pointerEvents='none'
+                    
+                    document.getElementById('popup_container_name').value=element.ename
+                    document.getElementById('popup_container_id').value=element.eid
+                    document.getElementById('popup_container_status').value=element.estatus
+                    document.getElementById('popup_container_group').value=element.egroup   
+                    document.getElementById('popup_container_role').value=element.erole
+
+                    if(element.estatus!=="Free"){
+                        if(localStorage.getItem('employee_task_data')){
+                            let employee_task_data= JSON.parse(localStorage.getItem('employee_task_data'))
+                            for (let index = 0; index < employee_task_data.length; index++) {
+                                const element_task = employee_task_data[index];
+                                if(element_task.taskStatus!=="complete" && element_task.eid===element.eid){
+                                    document.getElementById('popup_container_task').value=element_task.taskHead
+                                    document.getElementById('popup_container_duration').value=element_task.completionTime+" hrs"
+                                }
+                            }
+                        }
+                    }                        
+                })
 				
 				let main_div_img= document.createElement('img')
 				if(element.egender === "male")
@@ -219,7 +242,10 @@ function appendEmployees(){
 
 appendEmployees()
 
-
+function popupContainerCloseClick(){
+    document.getElementById('popup_container').className="hidden_popup_container"   
+    document.getElementById('managerHome_container_one').style.pointerEvents='initial'
+}
 
 function checkAddTaskEmployeeID(){
     let manager=document.getElementById('addTask_id')

@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="./css/managerHome.css">
 </head>
 <body>
-    <div class='managerHome_container_one'>
+    <div class='managerHome_container_one' id="managerHome_container_one">
+        <div class="hidden_popup_container" id="popup_container">
+            <p class="visible_popup_container_close" onclick="popupContainerCloseClick()">X</p>
+            <span class="visible_popup_container_label">Employee Name</span><input type="text" class="visible_popup_container_input" id="popup_container_name" readonly>
+            <span class="visible_popup_container_label">Employee ID</span><input type="text" class="visible_popup_container_input" id="popup_container_id" readonly>
+            <span class="visible_popup_container_label">Employee Satus</span><input type="text" class="visible_popup_container_input" id="popup_container_status" readonly>
+            <span class="visible_popup_container_label">Employee Group</span><input type="text" class="visible_popup_container_input" id="popup_container_group">
+            <span class="visible_popup_container_label">Employee Role</span><input type="text" class="visible_popup_container_input" id="popup_container_role">
+            <span class="visible_popup_container_label">Employee Task</span><input type="text" class="visible_popup_container_input" id="popup_container_task" readonly value="Not Assigned">
+            <span class="visible_popup_container_label">Employee Duration</span><input type="text" class="visible_popup_container_input" id="popup_container_duration" readonly value="Not Assigned">
+        </div>
     	<div class="managerHome_container_one_nav">
             <a class="managerHome_container_one_nav_anchor" href="#dashboard">Dashboasrd</a>
             <a class="managerHome_container_one_nav_anchor" href="#allEmployeeOverview">Overview</a>
