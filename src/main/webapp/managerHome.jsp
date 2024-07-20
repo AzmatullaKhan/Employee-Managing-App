@@ -26,7 +26,7 @@
            <a class="managerHome_container_one_nav_anchor" href="#addTask">Add Task</a>
             <a class="managerHome_container_one_nav_anchor" href="#creatEemployee">Create Employee</a>
             <a class="managerHome_container_one_nav_anchor" href="#profile">Profile</a>
-            <a class="managerHome_container_one_nav_anchor" href="loginType.html">Logout</a>
+            <a class="managerHome_container_one_nav_anchor" href="loginType.html" onclick="handleLogoutClick()">Logout</a>
         </div>
         <div class="managerHome_container_three">
             <section  class="managerHome_container_three_one" id="dashboard">

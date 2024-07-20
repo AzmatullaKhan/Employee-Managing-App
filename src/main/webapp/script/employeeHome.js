@@ -117,3 +117,7 @@ employee_data.forEach(element => {
         document.getElementById('employee_container_311_one_input_gender').value=element.egender
     }
 });
+
+function handleLogoutClick(){
+	localStorage.removeItem('employeeId')
+}

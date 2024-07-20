@@ -364,4 +364,8 @@ if(localStorage.getItem('manager_data')){
         }
     });
 }
+
+function handleLogoutClick(){
+	localStorage.removeItem('managerId')
+}
 // [{"mid":"2200031618","mname":"Azmatulla Khan","mcompanyname":"KL University","morle":"Manager","memail":"2200031618@kluniversity.in","mpassword":"MalikMD@123"}]
