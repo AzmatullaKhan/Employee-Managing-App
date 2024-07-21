@@ -58,18 +58,20 @@
             </section>
             <section class="managerHome_container_three_three" id="scheduleMeeting">
                 <div class="managerHome_container_three_three_one">
-                    <form class="managerHome_container_three_three_two" onsubmit="return validateScheduleMeeting()">
+                    <form class="managerHome_container_three_three_two" onsubmit="validateScheduleMeeting()" action="em" method="post">
+                    	<input type='text' style="display: none;" name="managerHome_container_three_three_managerID" id='managerHome_container_three_three_managerID' readonly>
+                              
                         <label for="scheduleMeeting_email_id" class="managerHome_container_three_three_two_label">Email</label>
                         <input type="email" id="scheduleMeeting_email_id" name="scheduleMeeting_email_id" class="managerHome_container_three_three_two_input" value="manager@gmail.com" readonly><br><br>
                     
                         <label for="scheduleMeeting_group" class="managerHome_container_three_three_two_label" id="scheduleMeeting_group_label">Group ID's</label>
-                        <input type="text" name="scheduleMeeting_group" id="scheduleMeeting_group" class="managerHome_container_three_three_two_input" placeholder="*** Enter Group ID's seperated by ',' ***" required onkeyup="checkScheduleMeetingGroupID()"><br><br>
+                        <input type="text" name="scheduleMeeting_group" id="scheduleMeeting_group" class="managerHome_container_three_three_two_input" placeholder="*** Enter Group ID's seperated by ',' ***" required onkeyup="checkScheduleMeetingGroupID()" onchange="handleScheduleMeetingGroupChange()"><br><br>
 
                         <label for="scheduleMeeting_email_subject" class="managerHome_container_three_three_two_label" id="scheduleMeeting_email_subject_label">Subject</label>
                         <input type="text" name="scheduleMeeting_email_subject" id="scheduleMeeting_email_subject" class="managerHome_container_three_three_two_input" placeholder="*** Subject ***" required onkeyup="checkScheduleMeetingSubject()"><br><br>
                     
                         <label for="scheduleMeeting_email_context" class="managerHome_container_three_three_two_label">Context</label>
-                        <textarea style="height: 100px;text-align: start;" id="scheduleMeeting_email_context" name="scheduleMeeting_email_context" class="managerHome_container_three_three_two_input" placeholder="*** Context ***" ></textarea><br>
+                        <textarea style="height: 100px;text-align: start;" id="scheduleMeeting_email_context" name="scheduleMeeting_email_context" class="managerHome_container_three_three_two_input" placeholder="*** Context (Like Mentioning time and date of meeeting or Some mail context you want to convey to your employees)***" required></textarea><br>
 
                         <button class="managerHome_container_three_three_two_button" type="submit">Schedule</button>
                     </form>
