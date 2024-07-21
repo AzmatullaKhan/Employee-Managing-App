@@ -58,6 +58,8 @@ employee_task_data.forEach(element => {
                 }
                 localStorage.setItem('employee_data', JSON.stringify(done_data))
             }
+		
+			window.location.reload()
         })
 
         main_div.appendChild(span1)

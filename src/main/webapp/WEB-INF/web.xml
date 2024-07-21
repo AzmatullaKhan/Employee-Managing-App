@@ -4,6 +4,10 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <welcome-file-list>
+  	<welcome-file>landingpage.html</welcome-file>
+  </welcome-file-list>
+  
   <servlet>
   	<servlet-name>ManagerSignup</servlet-name>
   	<display-name>ManagerSignup</display-name>
@@ -36,6 +40,14 @@
   	<description></description>
   	<servlet-class>com.controller.EmployeeLogin</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EmailMeeting</servlet-name>
+  	<display-name>EmailMeeting</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.EmailMeeting</servlet-class>
+  </servlet>
+  
+  
   
   <servlet-mapping>
   	<servlet-name>ManagerSignup</servlet-name>
@@ -57,5 +69,9 @@
   <servlet-mapping>
   	<servlet-name>EmployeeLogin</servlet-name>
   	<url-pattern>/el</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmailMeeting</servlet-name>
+  	<url-pattern>/em</url-pattern>
   </servlet-mapping>
 </web-app>

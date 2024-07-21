@@ -1,5 +1,6 @@
 document.getElementById('managerHome_container_one_managerID').value=localStorage.getItem('managerId');
 document.getElementById('managerHome_container_three_sixmanagerID').value=localStorage.getItem('managerId');
+document.getElementById('managerHome_container_three_three_managerID').value=localStorage.getItem('managerId');
 
 let employee_data=[];
 let parse_employee_data=[]
@@ -8,6 +9,10 @@ let employee_task_data=[]
 let	parse_employee_task_data=[]
 
 let parse_manager_data=[]
+
+let manager_meetings=[]
+
+let parse_manager_meeting=[]
 
 if(localStorage.getItem('employee_data')){
 	parse_employee_data = JSON.parse(localStorage.getItem('employee_data'))
@@ -18,24 +23,66 @@ if(localStorage.getItem('employee_task_data')){
 	parse_employee_task_data= JSON.parse(localStorage.getItem('employee_task_data'))
 	console.log(parse_employee_data)
 }
+
+if(localStorage.getItem('manager_meetings')){
+	parse_manager_meeting= JSON.parse(localStorage.getItem('manager_meetings'))
+	console.log(parse_manager_meeting)
+}
 	
 function validateScheduleMeeting(){
+	let mid=document.getElementById('managerHome_container_three_three_managerID').value
+	let memail=document.getElementById('scheduleMeeting_email_id').value
+	let groupId=document.getElementById('scheduleMeeting_group').value
+	let subject=document.getElementById('scheduleMeeting_email_subject').value
+	let context=document.getElementById('scheduleMeeting_email_context').value
+	if(localStorage.getItem('manager_meetings')){
+		manager_meetings=JSON.parse(localStorage.getItem('manager_meetings'))
+		manager_meetings.push({"mid":mid, "memail":memail, "groupId":groupId, "subject":subject, "context":context})
+		localStorage.setItem('manager_meetings', JSON.stringify(manager_meetings))
+	}
+	else{
+		manager_meetings.push({"mid":mid, "memail":memail, "groupId":groupId, "subject":subject, "context":context})
+		localStorage.setItem('manager_meetings', JSON.stringify(manager_meetings))
+	}
     alert('Meeting has been successfully Scheduled. Reast Easy Now')
-    document.getElementById('scheduleMeeting_group').value=""
-    window.location.href='/Employee-Managing-App//managerHome1.jsp#dashboard'
-    return false
 }
 
 function checkScheduleMeetingGroupID(){
     let manager=document.getElementById('scheduleMeeting_group')
     let char=manager.value[manager.value.length-1]
-    if(!((char>='0' && char<='9') || char===' ' || !char || char===',')){
+    if(!((char>='0' && char<='9') || !char || char===',')){
         document.getElementById('scheduleMeeting_group_label').className='error_animation'
         setTimeout(()=>{
             document.getElementById('scheduleMeeting_group_label').className='managerHome_container_three_three_two_label'
         }, 1000)
         manager.value=manager.value.slice(0, manager.value.length-1)
     }
+}
+function handleScheduleMeetingGroupChange(){
+    let groups=document.getElementById('scheduleMeeting_group').value
+    groups=groups.split(',')
+    if(localStorage.getItem('employee_data')){
+        let ped=JSON.parse(localStorage.getItem('employee_data'))
+        let isPresent=true
+        for (let index = 0; index < groups.length && isPresent; index++) {
+            const element_group = groups[index];
+            for (let i = 0; i < ped.length; i++) {
+                const element_ped = ped[i];
+                if(element_group===element_ped.egroup){
+                    isPresent=true
+                    break
+                }
+                else
+                    isPresent=false
+            }
+        }
+        if(!isPresent){
+            document.getElementById('scheduleMeeting_group').value=''
+            alert("Check the mentioned Group Id. Make sure to enter the group id's which are allocated")
+        }
+    }
+    else
+        alert('There are no employee groups to send a mail. Please create Employees to make a mail.')
 }
 
 function checkScheduleMeetingSubject(){
