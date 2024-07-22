@@ -97,6 +97,35 @@ function checkScheduleMeetingSubject(){
     }
 }
 
+let mail_count=Number(1)
+if(localStorage.getItem('manager_meetings')){
+    let array= JSON.parse(localStorage.getItem('manager_meetings'))
+    array.forEach(element => {
+        
+        let main_div=document.createElement('div')
+        main_div.className='managerHome_container_three_one_one_mini1_two_maildiv'
+
+        let span1=document.createElement('span')
+        span1.textContent=mail_count+". Group ID's: "+element.groupId
+
+        mail_count=mail_count+1 
+
+        let span2=document.createElement('span')
+        span2.textContent=element.subject
+
+        let span3=document.createElement('span')
+        span3.textContent=element.context
+
+        main_div.appendChild(span1)
+        main_div.appendChild(document.createElement('br'))
+        main_div.appendChild(span2)
+        main_div.appendChild(document.createElement('br'))
+        main_div.appendChild(span3)
+
+        document.getElementById('managerHome_container_three_one_one_mini1_two').appendChild(main_div)
+    });
+}
+
 
 function validateCreatEemployee(){
 	let manager_id=document.getElementById('managerHome_container_one_managerID').value

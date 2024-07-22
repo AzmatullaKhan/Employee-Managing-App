@@ -100,13 +100,6 @@ employee_task_data.forEach(element => {
     }
 });
 
-{/* <div class="employee_container_311_tasksDone_task">
-    <span class="employee_container_311_tasksDone_task_span">Sno.</span>
-    <h3>Task Head</h3>
-    <span class="employee_container_311_tasksDone_task_span">-Assigned By</span>
-</div> */}
-
-
 let employee_data= JSON.parse(localStorage.getItem('employee_data'))
 
 employee_data.forEach(element => {
@@ -122,4 +115,51 @@ employee_data.forEach(element => {
 
 function handleLogoutClick(){
 	localStorage.removeItem('employeeId')
+}
+
+function isValid(array){
+    let group=document.getElementById('employee_container_311_one_input_group').value
+    array = array.split(',')
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        if(element===group)
+            return true
+    }
+    return false
+}
+
+function showAllEmployeeMails(){
+    if(localStorage.getItem('manager_meetings')){
+        let array=JSON.parse(localStorage.getItem('manager_meetings'))
+        array.forEach(element => {
+            if(isValid(element.groupId)){
+
+                let main_div = document.createElement('div')
+                main_div.className='employeeHome_container_one_mail_eachMail'
+
+                let span1=document.createElement('span')
+                span1.textContent='Groups Invovled: '+element.groupId
+
+                let span2=document.createElement('span')
+                span2.textContent=element.subject
+                
+                let span3=document.createElement('span')
+                span3.textContent=element.context
+
+                main_div.appendChild(span1)
+                main_div.appendChild(document.createElement('br'))
+                main_div.appendChild(span2)
+                main_div.appendChild(document.createElement('br'))
+                main_div.appendChild(span3)
+
+                document.getElementById('employeeHome_container_one_mail').appendChild(main_div)
+
+            }
+        });
+    }
+    document.getElementById('employeeHome_container_one_mail').className='employeeHome_container_one_mail_visible'
+}
+
+function hideAllEmployeeMails(){
+    document.getElementById('employeeHome_container_one_mail').className='employeeHome_container_one_mail_hidden'
 }

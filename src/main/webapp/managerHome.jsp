@@ -32,11 +32,12 @@
             <section  class="managerHome_container_three_one" id="dashboard">
                 <div class="managerHome_container_three_one_one">
                     <div class="managerHome_container_three_one_one_mini1">
-                        <span>Tasks</span>
-                        <span>Scheduled</span>
-                        <span>Today</span>
-                        <span>For</span>
-                        <span>Manaer</span>
+                        <div class="managerHome_container_three_one_one_mini1_one">
+                            Calender
+                        </div>
+                        <div class="managerHome_container_three_one_one_mini1_two" id="managerHome_container_three_one_one_mini1_two">
+                            <div style="position: sticky; top: 0px; width: 268px; display: flex;justify-content: center;align-items: center; background-color: #fff;"><br><br><span>-Mails Sent By You</span></div>
+                        </div>
                     </div>
                     <div class="managerHome_container_three_one_one_mini2">
                         <div class="managerHome_container_three_one_one_mini2_detailHolder" id="managerHome_container_three_one_one_mini2_details">                  
