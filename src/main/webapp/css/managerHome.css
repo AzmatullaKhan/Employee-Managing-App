@@ -95,6 +95,13 @@ br{
     margin: 0px 0px 30px 0px;
     width:60%;
 }
+.visible_popup_container_delete_icon{
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    margin: 550px 0px 0px -350px; 
+    cursor: pointer;
+}
 /* <!--------------------------------------------------------------------------------------------------------------------------------------------------------> */
 .managerHome_container_one_nav{
     height:100px;
@@ -187,11 +194,23 @@ br{
     height:280px;
     width: 100%;
     border-radius: 12px;
-    border: 1px solid;
     margin: 4px 0px;
     display: flex;
+    flex-direction: column;
+    padding: 0px 12px;
+    overflow-y: scroll;
+}
+.managerHome_container_three_one_one_mini1_one_employeemail{
+    min-height:100px;
+    width:100%;
+    border: 1px solid;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 4px 0px;
+    margin: 10px 0px;
 }
 .managerHome_container_three_one_one_mini1_two{
     min-height:388px;

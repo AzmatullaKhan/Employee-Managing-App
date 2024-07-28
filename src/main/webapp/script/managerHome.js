@@ -102,27 +102,31 @@ if(localStorage.getItem('manager_meetings')){
     let array= JSON.parse(localStorage.getItem('manager_meetings'))
     array.forEach(element => {
         
-        let main_div=document.createElement('div')
-        main_div.className='managerHome_container_three_one_one_mini1_two_maildiv'
-
-        let span1=document.createElement('span')
-        span1.textContent=mail_count+". Group ID's: "+element.groupId
-
-        mail_count=mail_count+1 
-
-        let span2=document.createElement('span')
-        span2.textContent=element.subject
-
-        let span3=document.createElement('span')
-        span3.textContent=element.context
-
-        main_div.appendChild(span1)
-        main_div.appendChild(document.createElement('br'))
-        main_div.appendChild(span2)
-        main_div.appendChild(document.createElement('br'))
-        main_div.appendChild(span3)
-
-        document.getElementById('managerHome_container_three_one_one_mini1_two').appendChild(main_div)
+        if(element.mid === localStorage.getItem('managerId')){
+		
+			let main_div=document.createElement('div')
+	        main_div.className='managerHome_container_three_one_one_mini1_two_maildiv'
+	
+	        let span1=document.createElement('span')
+	        span1.textContent=mail_count+". Group ID's: "+element.groupId
+	
+	        mail_count=mail_count+1 
+	
+	        let span2=document.createElement('span')
+	        span2.textContent=element.subject
+	
+	        let span3=document.createElement('span')
+	        span3.textContent=element.context
+	
+	        main_div.appendChild(span1)
+	        main_div.appendChild(document.createElement('br'))
+	        main_div.appendChild(span2)
+	        main_div.appendChild(document.createElement('br'))
+	        main_div.appendChild(span3)
+	
+	        document.getElementById('managerHome_container_three_one_one_mini1_two').appendChild(main_div)
+		
+		}
     });
 }
 
@@ -273,7 +277,26 @@ function appendEmployees(){
                                 }
                             }
                         }
-                    }                        
+                    }     
+                    
+                    let main_img=document.createElement('img')
+                    main_img.src='./images/employeeDelete.png'
+                    main_img.className='visible_popup_container_delete_icon'
+                    main_img.alt='delete_icon'
+                    
+                    main_img.addEventListener('click', ()=>{
+                        let new_parse_employee_data=[]
+                        parse_employee_data.forEach(object => {
+                            if(object.eid!==element.eid){
+                                new_parse_employee_data.push({"mid":object.mid,"ename":object.ename, "eid":object.eid, "erole":object.erole, "epassword":object.epassword, "egender":object.egender, "egroup":object.egroup, "estatus":object.estatus})
+                            }
+                        });
+                        localStorage.setItem('employee_data', JSON.stringify(new_parse_employee_data))
+                        window.location.reload()
+                    })
+
+                    document.getElementById('popup_container').appendChild(main_img)
+
                 })
 				
 				let main_div_img= document.createElement('img')
@@ -445,3 +468,32 @@ function handleLogoutClick(){
 	localStorage.removeItem('managerId')
 }
 // [{"mid":"2200031618","mname":"Azmatulla Khan","mcompanyname":"KL University","morle":"Manager","memail":"2200031618@kluniversity.in","mpassword":"MalikMD@123"}]
+
+if(localStorage.getItem('employee_mails')){
+    let employee_mails = JSON.parse(localStorage.getItem('employee_mails'))
+
+    employee_mails.forEach(element => {
+        if(element.mid===localStorage.getItem('managerId')){
+            let main_div=document.createElement('div')
+            main_div.className='managerHome_container_three_one_one_mini1_one_employeemail'
+
+            let span1=document.createElement('span')
+            span1.textContent="From: "+element.eid
+
+            let span2=document.createElement('span')
+            span2.textContent=element.esubject
+
+            let span3=document.createElement('span')
+            span3.style.textAlign='center'
+            span3.textContent=element.econtext
+
+            main_div.appendChild(span1)
+            main_div.appendChild(document.createElement('br'))
+            main_div.appendChild(span2)
+            main_div.appendChild(document.createElement('br'))
+            main_div.appendChild(span3)
+
+            document.getElementById('managerHome_container_three_one_one_mini1_one').appendChild(main_div)
+        }
+    });
+}

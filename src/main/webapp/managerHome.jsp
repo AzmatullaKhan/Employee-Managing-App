@@ -19,8 +19,8 @@
             <span class="visible_popup_container_label">Employee Duration</span><input type="text" class="visible_popup_container_input" id="popup_container_duration" readonly value="Not Assigned">
         </div>
     	<div class="managerHome_container_one_nav">
-            <a class="managerHome_container_one_nav_anchor" href="#dashboard">Dashboasrd</a>
-            <a class="managerHome_container_one_nav_anchor" href="#allEmployeeOverview">Overview</a>
+            <a class="managerHome_container_one_nav_anchor" href="#dashboard">Dashboard</a>
+            <!-- <a class="managerHome_container_one_nav_anchor" href="#allEmployeeOverview">Overview</a> -->
             <a class="managerHome_container_one_nav_anchor" href="#scheduleMeeting">Schedule Meeting</a>
            <!--  <a class="managerHome_container_one_nav_anchor" href="#getSpecificEmployee">Edit Employee</a> -->
            <a class="managerHome_container_one_nav_anchor" href="#addTask">Add Task</a>
@@ -32,8 +32,8 @@
             <section  class="managerHome_container_three_one" id="dashboard">
                 <div class="managerHome_container_three_one_one">
                     <div class="managerHome_container_three_one_one_mini1">
-                        <div class="managerHome_container_three_one_one_mini1_one">
-                            Calender
+                        <div class="managerHome_container_three_one_one_mini1_one" id="managerHome_container_three_one_one_mini1_one">
+                            <div style="position: sticky; top: 0px; width: 268px; display: flex;justify-content: center;align-items: center; background-color: #fff;"><br><br><span>-Mails Sent By Employees</span></div>
                         </div>
                         <div class="managerHome_container_three_one_one_mini1_two" id="managerHome_container_three_one_one_mini1_two">
                             <div style="position: sticky; top: 0px; width: 268px; display: flex;justify-content: center;align-items: center; background-color: #fff;"><br><br><span>-Mails Sent By You</span></div>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </section>
-            <section class="managerHome_container_three_two" id="allEmployeeOverview">
+            <!-- <section class="managerHome_container_three_two" id="allEmployeeOverview">
                 <div class="managerHome_container_three_two_one">
                     <div style="display: flex;">
                         <div class="managerHome_container_three_two_one_mini"> PieChart</div>
@@ -56,7 +56,7 @@
                         <div class="managerHome_container_three_two_one_mini"> DoughNut Graph</div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <section class="managerHome_container_three_three" id="scheduleMeeting">
                 <div class="managerHome_container_three_three_one">
                     <form class="managerHome_container_three_three_two" onsubmit="validateScheduleMeeting()" action="em" method="post">

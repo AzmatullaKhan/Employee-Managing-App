@@ -8,9 +8,12 @@
 </head>
 <body>
     <div class="employeeHome_container_one">
+        <div class="employeeHome_container_one_teamHolder" id="employeeHome_container_one_teamHolder">
+            Group Member Id's:<br><br>
+        </div>
         <div class="employeeHome_container_one_nav">
             <a class="employeeHome_container_one_nav_anchor" href="#dashboard">Dashboard</a>
-            <a class="employeeHome_container_one_nav_anchor" href="#overview">OverView</a>
+            <a class="employeeHome_container_one_nav_anchor" href="#overview">Send Mail</a>
             <a class="employeeHome_container_one_nav_anchor" href="#profile">Profile</a>
             <button class="employeeHome_container_one_nav_button" onclick="showAllEmployeeMails()"></button>
         </div>
@@ -30,16 +33,20 @@
             </section>
             <section class="employee_container_three_two" id="overview">
                 <div class="employee_container_three_two_one">
-                    <div class="employee_container_321_overview">
-                        <h1 style="font-variant: small-caps;text-decoration:underline;">Nuumber of Tasks Completed in time</h1>
-                        <h1 style="font-variant: small-caps;text-decoration:underline;">Bonus Salary</h1>
-                        <h1 style="font-variant: small-caps;text-decoration:underline;">Nuumber of Tasks Not Completed in time</h1>
-                        <h1 style="font-variant: small-caps;text-decoration:underline;">Salary Deduction</h1>
-                        <h1 style="font-variant: small-caps;text-decoration:underline;">Attendence Percentage</h1>
-                        <h1 style="font-variant: small-caps;text-decoration:underline;">Number of tasks cancelled by you</h1>
-                        <h1 style="font-variant: small-caps;text-decoration:underline;">Number of tasks cancelled by you</h1>
-                        <h1 style="font-variant: small-caps;text-decoration:underline;">Feed background-size</h1>
-                    </div>
+                    <form class="employee_container_321_overview" action="EmployeeMail" method="post">
+                        <label for="overview_employee_id" class="employee_container_321_overview_div_label">Employee ID</label>
+                        <input type="email" id="overview_employee_id" name="overview_employee_id" class="employee_container_321_overview_div_input" placeholder="*** Email ***" readonly><br><br>
+                    
+                        <label for="overview_employee_subject" class="employee_container_321_overview_div_label" id="employee_container_321_overview_div_label">Subject</label>
+                        <input type="text" id="overview_employee_subject" name="overview_employee_subject" class="employee_container_321_overview_div_input" placeholder="*** Subject ***" onkeyup="checkOverviewSubject()" required><br><br>
+                    
+                        <label for="overview_employee_context" class="employee_container_321_overview_div_label">Context</label>
+                        <textarea style="height: 100px;text-align: start;" type="text" id="overview_employee_context" name="overview_employee_context" class="employee_container_321_overview_div_input" placeholder="*** Context ***" required></textarea><br>
+
+                        <input type="text" style="display: none;" id="overview_mid" name="overview_mid">
+
+                        <button class="employee_container_321_overview_div_button" type="submit" onclick="handleOvervireSubmit()">Submit</button>
+                    </form>
                 </div>
             </section>
             <section class="employee_container_three_three" id="profile">

@@ -46,6 +46,12 @@
   	<description></description>
   	<servlet-class>com.controller.EmailMeeting</servlet-class>
   </servlet>
+   <servlet>
+  	<servlet-name>EmployeeMail</servlet-name>
+  	<display-name>EmployeeMail</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.EmployeeMail</servlet-class>
+  </servlet>
   
   
   
@@ -73,5 +79,9 @@
   <servlet-mapping>
   	<servlet-name>EmailMeeting</servlet-name>
   	<url-pattern>/em</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmployeeMail</servlet-name>
+  	<url-pattern>/EmployeeMail</url-pattern>
   </servlet-mapping>
 </web-app>

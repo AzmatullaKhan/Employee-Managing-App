@@ -11,7 +11,7 @@
         <div class="employeeLogin_container_two">
             <form class="employeeLogin_container_three" action="el" method="post" onsubmit="validateEmployeeLogin()">
                 <label for="employee_id" id="employee_id_label" class="employeeLogin_container_three_label">Employee id</label>
-                <input type="text" name="employee_id" id="employee_id" class="employeeLogin_container_three_input" placeholder="*** Employee ID ***" required onkeyup="checkEmployeeID()"><br>
+                <input type="text" name="employee_id" id="employee_id" class="employeeLogin_container_three_input" placeholder="*** Employee ID ***" required onkeyup="checkEmployeeID()" onchange="handleChangeEmployeeID()"><br>
                 
                 <label for="employee_password" class="employeeLogin_container_three_label">Password</label>
                 <input type="password" name="employee_password" id="employee_password" class="employeeLogin_container_three_input" placeholder="*** password***" required><br><br>
@@ -38,6 +38,21 @@
 
         function validateEmployeeLogin(){
             localStorage.setItem('employeeId', document.getElementById('employee_id').value)
+        }
+
+        function handleChangeEmployeeID(){
+            let parse_employee_data=JSON.parse(localStorage.getItem('employee_data'))
+            let isExist=false
+            for (let index = 0; index < parse_employee_data.length; index++) {
+                const element = parse_employee_data[index];
+                if(element.eid===document.getElementById('employee_id').value){
+                    isExist=true
+                }
+            }
+            if(!isExist){
+                document.getElementById('employee_id').value=''
+                alert("Entered Employee ID doesn't exist. Contact your manager")
+            }
         }
     </script>
 </body>

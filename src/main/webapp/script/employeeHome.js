@@ -2,6 +2,24 @@ let employee_id=localStorage.getItem('employeeId')
 
 let employee_task_data=JSON.parse(localStorage.getItem('employee_task_data'))
 
+document.getElementById('overview_employee_id').value=employee_id
+
+let employee_mails=[]
+
+if(localStorage.getItem('employee_mails')){
+    console.log(JSON.parse(localStorage.getItem('employee_mails')))
+}
+
+setTimeout(()=>{
+    for (let index = 0; index < employee_data.length; index++) {
+        const element = employee_data[index];
+        if(element.eid===employee_id){
+            document.getElementById('overview_mid').value=element.mid
+            break
+        }
+    }
+},100)
+
 let count=Number(1);
 employee_task_data.forEach(element => {
     if(element.eid===employee_id && element.taskStatus==='notComplete'){
@@ -30,36 +48,38 @@ employee_task_data.forEach(element => {
         button.textContent='Done?'
 		button.addEventListener('click',()=>{
 
-            for (let index = 0; index < employee_task_data.length; index++) {
-                const element = employee_task_data[index];
-                if(element.eid === employee_id && element.taskStatus === 'notComplete'){
-                    element.taskStatus = "complete"
-                    break;
-                }
-            }
-            localStorage.setItem('employee_task_data', JSON.stringify(employee_task_data))
-
-            let isThereTask=false
-            for (let index = 0; index < employee_task_data.length; index++) {
-                const element = employee_task_data[index];
-                if(element.eid === employee_id && element.taskStatus === 'notComplete'){
-                    isThereTask=true
-                    break;
-                }
-            }
-            if(!isThereTask){
-                let done_data=JSON.parse(localStorage.getItem('employee_data'))
-                for (let index = 0; index < done_data.length; index++) {
-                    const element = done_data[index];
-                    if(element.eid===employee_id){
-                        element.estatus="Free"
+            if(confirm("Completing the task a lot sooner than assigned time, Still want to proceed?")){
+                for (let index = 0; index < employee_task_data.length; index++) {
+                    const element = employee_task_data[index];
+                    if(element.eid === employee_id && element.taskStatus === 'notComplete'){
+                        element.taskStatus = "complete"
                         break;
                     }
                 }
-                localStorage.setItem('employee_data', JSON.stringify(done_data))
+                localStorage.setItem('employee_task_data', JSON.stringify(employee_task_data))
+
+                let isThereTask=false
+                for (let index = 0; index < employee_task_data.length; index++) {
+                    const element = employee_task_data[index];
+                    if(element.eid === employee_id && element.taskStatus === 'notComplete'){
+                        isThereTask=true
+                        break;
+                    }
+                }
+                if(!isThereTask){
+                    let done_data=JSON.parse(localStorage.getItem('employee_data'))
+                    for (let index = 0; index < done_data.length; index++) {
+                        const element = done_data[index];
+                        if(element.eid===employee_id){
+                            element.estatus="Free"
+                            break;
+                        }
+                    }
+                    localStorage.setItem('employee_data', JSON.stringify(done_data))
+
+                    window.location.reload()
+                }
             }
-		
-			window.location.reload()
         })
 
         main_div.appendChild(span1)
@@ -162,4 +182,42 @@ function showAllEmployeeMails(){
 
 function hideAllEmployeeMails(){
     document.getElementById('employeeHome_container_one_mail').className='employeeHome_container_one_mail_hidden'
+    window.location.reload()
 }
+
+function checkOverviewSubject(){
+    let manager=document.getElementById('overview_employee_subject')
+    let char=manager.value[manager.value.length-1]
+    if(!((char>='a' && char<='z') || (char>='A' && char<='Z') || char===' ' || !char)){
+        document.getElementById('employee_container_321_overview_div_label').className='error_animation'
+        setTimeout(()=>{
+            document.getElementById('employee_container_321_overview_div_label').className='employee_container_321_overview_div_label'
+        }, 1000)
+        manager.value=manager.value.slice(0, manager.value.length-1)
+    }
+}
+
+function handleOvervireSubmit(){
+    if(localStorage.getItem('employee_mails'))
+        employee_mails=JSON.parse(localStorage.getItem('employee_mails'))
+
+    let esubject=document.getElementById('overview_employee_subject').value
+    let eid=document.getElementById('overview_employee_id').value
+    let econtext=document.getElementById('overview_employee_context').value
+    let mid=document.getElementById('overview_mid').value
+
+    employee_mails.push({"eid":eid, "esubject":esubject, "econtext":econtext, "mid":mid})
+
+    localStorage.setItem('employee_mails', JSON.stringify(employee_mails))
+    alert('Mail has been successfully sent to Manager')
+    // window.location.reload()
+}
+
+
+employee_data.forEach(element => {
+    if(element.egroup === document.getElementById('employee_container_311_one_input_group').value){
+        let span=document.createElement('span')
+        span.textContent=element.eid 
+        document.getElementById('employeeHome_container_one_teamHolder').appendChild(span)
+    }
+});

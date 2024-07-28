@@ -15,6 +15,26 @@
         justify-content: center;
         align-items: center;
     }
+    .error_animation{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: bolder;
+        margin: 10px 0px 10px 0px;
+        text-align: center;
+        color: #4949c6;
+        user-select: none;
+        width: fit-content;
+        border-radius: 5px;
+        padding: 0px 2px;
+        animation: error_animation-animation 1s ease-in-out 0s;
+    }
+    @keyframes error_animation-animation {
+        0%{background-color: red;}
+        25%{background-color: transparent;}
+        50%{background-color: red;}
+        75%{background-color: transparent;}
+        100%{background-color: red;}
+    }
 /* -------------------------------------------------------------------------------------------------------------------------------------- */
 
     .employeeHome_container_one{
@@ -45,6 +65,18 @@
         border:none;
         width: 130px;
         font-size: 16px;
+    }
+    .employeeHome_container_one_teamHolder{
+        height:100px;
+        width:150px;
+        border-radius: 12px;
+        box-shadow: 0 0 4px 5px lightgrey;
+        position: absolute;
+        margin-left: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 /* -------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -288,6 +320,45 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    .employee_container_321_overview_div_label{
+        font-size: 20px;
+        font-variant: small-caps;
+        font-weight: bolder;
+        margin: 10px 0px 10px 0px;
+        text-align: center;
+        color: #4949c6;
+    }
+    .employee_container_321_overview_div_input{
+        height:30px;
+        width: 60%;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid;
+        outline: none;
+        background-color: transparent;
+        text-align: center;
+    }
+    
+    .employee_container_321_overview_div_button{
+        height:50px;
+        width:130px;
+        align-self: center;
+        margin: 20px 0px;
+        background-color: transparent;
+        border-radius: 12px;
+        border:2px solid #4949c6;
+        cursor: pointer;
+        transition: all 0.4s ease;
+
+    }
+    .employee_container_321_overview_div_button:hover{
+        background-color: #4949c6;
+        border:none;
+        width: 140px;
+        font-size: 16px;
+        color: #fff;
     }
     /* -------------------------------------------------------------------------------------------------------------------------------------- */
     .employee_container_three_three{
