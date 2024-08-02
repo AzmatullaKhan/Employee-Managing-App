@@ -29,9 +29,9 @@ public class EmployeeTaskAdd extends HttpServlet {
 		
 		try {
 			eto.addTaskToEmployeee(etm);
-			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome.jsp");
+			response.sendRedirect("managerHome.jsp");
 		} catch (Exception e) {
-			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome.jsp");
+			response.sendRedirect("managerHome.jsp");
 		}
 		
 	}

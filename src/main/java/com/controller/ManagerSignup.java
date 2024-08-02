@@ -37,9 +37,9 @@ public class ManagerSignup extends HttpServlet {
 		try {
 			mo.addManager(mm);
 		} catch (Exception e) {
-			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerSignup.html");
+			response.sendRedirect("managerSignup.html");
 		}
-		response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerLogin.html");
+		response.sendRedirect("managerLogin.html");
 	}
 
 }

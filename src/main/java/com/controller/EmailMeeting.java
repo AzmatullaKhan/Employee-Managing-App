@@ -29,7 +29,7 @@ public class EmailMeeting extends HttpServlet {
 		
 		try {
 			eo.addEmail(em);
-			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome.jsp");
+			response.sendRedirect("managerHome.jsp");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

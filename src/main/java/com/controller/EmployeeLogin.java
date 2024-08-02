@@ -25,12 +25,12 @@ public class EmployeeLogin extends HttpServlet {
 		try {
 			String password=eto.getPasswordManager(eid);
 			if(pass.equals(password)) 
-				response.sendRedirect("http://localhost:8180/Employee-Managing-App/employeeHome.html");
+				response.sendRedirect("employeeHome.html");
 			else
-				response.sendRedirect("http://localhost:8180/Employee-Managing-App/employeeLogin.html");
+				response.sendRedirect("employeeLogin.html");
 				
 		} catch (Exception e) {
-			response.sendRedirect("http://localhost:8180/Employee-Managing-App/employeeLogin.html");
+			response.sendRedirect("employeeLogin.html");
 		}
 	
 	}

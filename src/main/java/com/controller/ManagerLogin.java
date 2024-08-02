@@ -26,15 +26,15 @@ public class ManagerLogin extends HttpServlet {
 		try {
 			String passSaved = mo.getPasswordManager(mid);
 			if(pass.equals(passSaved)) {
-				response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerHome.jsp");
+				response.sendRedirect("managerHome.jsp");
 				PrintWriter pw= response.getWriter();
 				pw.print("<h1 id='fromSomewhere'>"+mid+"</h1>");
 			}
 			else {
-				response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerLogin.html");
+				response.sendRedirect("managerLogin.html");
 			}
 		} catch (Exception e) {
-			response.sendRedirect("http://localhost:8180/Employee-Managing-App/managerLogin.html");
+			response.sendRedirect("managerLogin.html");
 		}
 	}
 
